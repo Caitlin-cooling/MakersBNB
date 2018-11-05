@@ -31,4 +31,21 @@ describe User do
       expect(user.password).to eq BCrypt::Password.new(user.password)
     end
   end
+
+  describe '.authenticate' do
+    it 'authenticates a user log in' do
+      user = User.authenticate("stan@stan.com", "password123")
+      expect(user).to eq '1'
+    end
+
+    it 'returns nil if user email doesnt exist' do
+      user = User.authenticate("stan@test.com", "password123")
+      expect(user).to eq nil
+    end
+
+    it 'returns nil if password is incorrect' do
+      user = User.authenticate("stan@stan.com", "test123")
+      expect(user).to eq nil
+    end
+  end
 end

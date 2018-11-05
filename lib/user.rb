@@ -24,6 +24,13 @@ class User
     end
   end
 
+  def self.authenticate(email, password)
+      user  = DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
+      return unless user
+      return unless BCrypt::Password.new(user['password']) == password
+      user['id']
+  end
+
   def self.exists?(email)
     return true if DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
     false

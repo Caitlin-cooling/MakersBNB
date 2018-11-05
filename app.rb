@@ -26,6 +26,16 @@ class MakersBnB < Sinatra::Base
     erb :user_home
   end
 
+  get '/log_in' do
+    erb :log_in
+  end
+
+  post '/session/new' do
+    # if User.authenticate(params[:email], params[:password])
+    #   redirect '/'
+    # end
+  end
+
   get '/postings/new' do
     erb :"postings/new"
   end
