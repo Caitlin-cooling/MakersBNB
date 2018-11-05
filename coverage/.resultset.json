@@ -1,7 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Joel/Makers/week6/MakersBNB/spec/features/index_spec.rb": [
+      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/setup_test_database.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/features/index_spec.rb": [
         1,
         1,
         1,
@@ -10,6 +19,6 @@
         null
       ]
     },
-    "timestamp": 1541418613
+    "timestamp": 1541420715
   }
 }
