@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/setup_test_database.rb": [
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/setup_test_database.rb": [
         1,
         null,
         1,
@@ -12,7 +12,7 @@
         7,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/features/index_spec.rb": [
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/index_spec.rb": [
         1,
         null,
         1,
@@ -31,52 +31,12 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/features/new_postings_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/features/sign_up_spec.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/rebeccamulugeta/Projects/MakersBNB/spec/units/database_connection_spec.rb": [
-        1,
-        null,
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/new_postings_spec.rb": [
         1,
         1,
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
         1,
         1,
         1,
@@ -86,7 +46,46 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/MakersBNB/lib/database_connection.rb": [
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/sign_up_spec.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/units/database_connection_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/lib/database_connection.rb": [
         1,
         null,
         1,
@@ -104,6 +103,6 @@
         null
       ]
     },
-    "timestamp": 1541427919
+    "timestamp": 1541429384
   }
 }
