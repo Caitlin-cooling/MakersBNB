@@ -1,18 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/setup_test_database.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/setup_test_database.rb": [
         1,
         null,
         1,
         null,
-        7,
-        7,
-        7,
-        7,
+        8,
+        8,
+        8,
+        8,
         null
       ],
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/index_spec.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/features/index_spec.rb": [
         1,
         null,
         1,
@@ -26,6 +26,9 @@
         1,
         1,
         1,
+        2,
+        null,
+        null,
         1,
         1,
         null,
@@ -50,19 +53,13 @@
         1,
         1,
         1,
-        null,
-        null,
-        1,
-        1,
         1,
         null,
         null
       ],
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/units/database_connection_spec.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/units/database_connection_spec.rb": [
         1,
         null,
-        1,
-        1,
         1,
         1,
         1,
@@ -85,17 +82,32 @@
         null,
         null
       ],
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/lib/database_connection.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/units/user_spec.rb": [
         1,
         null,
         1,
+        null,
         3,
         null,
+        1,
+        2,
+        null,
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null,
@@ -103,6 +115,5 @@
         null
       ]
     },
-    "timestamp": 1541430884
   }
 }
