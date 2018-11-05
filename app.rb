@@ -18,4 +18,8 @@ class MakersBnB < Sinatra::Base
     @user = User.all.last
     erb :user_home
   end
+
+  get '/postings/new' do
+    erb :"postings/new"
+  end
 end

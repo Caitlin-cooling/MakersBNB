@@ -26,17 +26,31 @@
         1,
         1,
         1,
+        2,
+        null,
+        null,
         1,
         1,
         null,
         null
       ],
-      "/Users/Joel/Makers/week6/MakersBNB/spec/features/sign_up_spec.rb": [
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/new_postings_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
         null,
         null,
+        null
+      ],
+      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/sign_up_spec.rb": [
+        1,
         1,
         1,
         1,
@@ -46,8 +60,6 @@
       "/Users/Joel/Makers/week6/MakersBNB/spec/units/database_connection_spec.rb": [
         1,
         null,
-        1,
-        1,
         1,
         1,
         1,
@@ -103,6 +115,5 @@
         null
       ]
     },
-    "timestamp": 1541430055
   }
 }
