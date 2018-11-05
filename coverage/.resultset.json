@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/caitlincooling/Projects/MakersBNB/spec/features/index_spec.rb": [
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/features/index_spec.rb": [
         1,
         null,
         1,
@@ -19,8 +19,16 @@
         1,
         null,
         null
+      ],
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/features/sign_up_spec.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
       ]
     },
-    "timestamp": 1541420146
+    "timestamp": 1541420549
   }
 }

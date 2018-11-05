@@ -8,6 +8,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'sinatra/base'
 require 'pry'
+require_relative 'web_helpers'
 
 require(File.join(File.dirname(__FILE__), '../app.rb'))
 
