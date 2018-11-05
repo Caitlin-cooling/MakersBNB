@@ -9,10 +9,14 @@ require 'simplecov-console'
 require 'sinatra/base'
 require 'pry'
 
-Simplecov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+require(File.join(File.dirname(__FILE__), '../app.rb'))
+
+Capybara.app = MakersBnB
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
 ])
-SimpleCov.startgit 
+SimpleCov.start
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
