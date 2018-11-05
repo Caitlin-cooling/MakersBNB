@@ -3,5 +3,5 @@ def sign_up_as_test_user
   fill_in :name,with: 'Stan Testson'
   fill_in :email,with: 'stan@stan.com'
   fill_in :password,with: 'password123'
-  click_button :submit
+  click_button :Submit
 end
