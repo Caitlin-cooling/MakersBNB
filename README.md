@@ -24,3 +24,12 @@ So other users can contact me,
 I would like my contact details to be shown on my space listing
 
 ```
+
+### Database Set Up
+
+The project requires a development and a test database.
+1. Connect to psql
+2. Create the database using the 'psql' command 'CREATE DATABASE makersbnb;'
+3. Connect to the database using 'psql' command '\c makersbnb'
+4. Run queries saved in db migration folder in the order they appear. Repeat for
+the test database.
