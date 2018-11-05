@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem 'bcrypt'
 gem 'pg'
 gem 'pry'
 gem 'rubocop', '0.56.0'

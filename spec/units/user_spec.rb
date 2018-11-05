@@ -13,7 +13,7 @@ describe User do
       user = User.create(name: test_user[:name], email: test_user[:email], password: test_user[:password]).first
       expect(user['name']).to eq test_user[:name]
       expect(user['email']).to eq test_user[:email]
-      expect(user['password']).to eq test_user[:password]
+      expect(user['password']).to eq BCrypt::Password.new(user['password'])
       expect(user['id']).to eq '2'
     end
   end
@@ -24,7 +24,7 @@ describe User do
       expect(user.id).to eq '1'
       expect(user.name).to eq test_user[:name]
       expect(user.email).to eq test_user[:email]
-      expect(user.password).to eq test_user[:password]
+      expect(user.password).to eq BCrypt::Password.new(user.password)
     end
   end
 end
