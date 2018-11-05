@@ -24,6 +24,9 @@ As a space owner,
 So other users can contact me,
 I would like my contact details to be shown on my space listing
 
+As a user,
+So I can continue using MakersBnB,
+I would like to log in and log out
 ```
 
 ### Database Set Up
