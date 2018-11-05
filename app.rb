@@ -10,11 +10,11 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_up' do
-    User.create(name: params[:name], email: params[:email], password: params[:password])
-    redirect "/home"
+    user = User.create(name: params[:name], email: params[:email], password: params[:password]).first
+    redirect "/#{user['id']}/home"
   end
 
-  get '/home' do
+  get '/:id/home' do
     @user = User.all.last
     erb :user_home
   end

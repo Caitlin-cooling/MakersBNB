@@ -7,5 +7,5 @@ def sign_up_as_test_user
 end
 
 def insert_user_into_test_database
-  User.create(name: test_user[:name], email: test_user[:email], password: test_user[:password]).first
+  User.create(name: test_user[:name], email: test_user[:email], password: test_user[:password])
 end
