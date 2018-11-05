@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'enviroment_set_up'
 
 class MakersBnB < Sinatra::Base
   enable :sessions

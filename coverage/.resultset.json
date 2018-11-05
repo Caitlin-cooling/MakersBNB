@@ -1,35 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/setup_test_database.rb": [
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/setup_test_database.rb": [
         1,
         null,
         1,
         null,
-        4,
-        4,
+        7,
+        7,
+        7,
+        7,
         null
       ],
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/features/index_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/spec/units/database_connection_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/features/index_spec.rb": [
         1,
         null,
         1,
@@ -48,12 +31,31 @@
         null,
         null
       ],
-      "/Users/Joel/Makers/week6/MakersBNB/spec/features/sign_up_spec.rb": [
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/features/sign_up_spec.rb": [
         1,
         1,
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/units/database_connection_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         null,
@@ -68,24 +70,36 @@
         null,
         null
       ],
-      "/Users/irinabaldwin/Dropbox/Projects/MakersBNB/lib/database_connection.rb": [
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/spec/units/user_spec.rb": [
         1,
         null,
         1,
-        3,
         null,
+        2,
+        null,
+        1,
         null,
         1,
         1,
-        null,
-        null,
+        1,
+        1,
         1,
         1,
         null,
         null,
         null
+      ],
+      "/Users/rupertadams/Documents/CodingProjects/makersAcademy/makersBNB/MakersBNB/lib/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1541421515
+    "timestamp": 1541427893
   }
 }
