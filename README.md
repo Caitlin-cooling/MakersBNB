@@ -6,6 +6,7 @@
 As a user,
 So I can visit MakersBNB,
 I would like to view the MakersBNB home page
+# Completed
 
 As a user,
 So I can start using MakersBNB,

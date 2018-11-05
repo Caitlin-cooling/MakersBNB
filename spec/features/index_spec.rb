@@ -1,6 +1,17 @@
 feature 'home page' do
-  scenario 'viewing the title' do
+
+  before do
     visit '/'
+  end
+
+  scenario 'viewing the title' do
     expect(page).to have_content 'Welcome to MakersBnB!'
+  end
+
+  scenario 'viewing sign up form' do
+    expect(page).to have_css("input[type='text'][placeholder='Name']")
+    expect(page).to have_css("input[type='text'][placeholder='Email']")
+    expect(page).to have_css("input[type='password'][placeholder='Password']")
+    expect(page).to have_css("input[type='submit'][value='Submit']")
   end
 end
