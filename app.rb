@@ -16,4 +16,8 @@ class MakersBnB < Sinatra::Base
     @name = session[:name]
     erb :user_home
   end
+
+  get '/postings/new' do
+    erb :"postings/new"
+  end
 end
