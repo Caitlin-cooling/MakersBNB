@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/caitlincooling/Projects/MakersBNB/spec/setup_test_database.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/setup_test_database.rb": [
         1,
         null,
         1,
@@ -12,7 +12,7 @@
         8,
         null
       ],
-      "/Users/caitlincooling/Projects/MakersBNB/spec/features/index_spec.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/features/index_spec.rb": [
         1,
         null,
         1,
@@ -31,7 +31,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/MakersBNB/spec/features/sign_up_spec.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/features/sign_up_spec.rb": [
         1,
         1,
         1,
@@ -43,7 +43,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/MakersBNB/spec/units/database_connection_spec.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/units/database_connection_spec.rb": [
         1,
         null,
         1,
@@ -70,7 +70,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/MakersBNB/spec/units/user_spec.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/spec/units/user_spec.rb": [
         1,
         null,
         1,
@@ -102,7 +102,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/MakersBNB/lib/user.rb": [
+      "/Users/Joel/Makers/week6/MakersBNB/lib/user.rb": [
         1,
         null,
         1,
@@ -110,10 +110,10 @@
         1,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
+        2,
         null,
         null,
         1,
@@ -121,14 +121,14 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1541429293
+    "timestamp": 1541429406
   }
 }

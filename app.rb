@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/user'
 require_relative 'enviroment_set_up'
 
 class MakersBnB < Sinatra::Base
@@ -14,7 +15,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/home' do
-    @name = session[:name]
+    @user = User.all.last
     erb :user_home
   end
 end
