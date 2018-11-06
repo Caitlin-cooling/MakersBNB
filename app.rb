@@ -68,4 +68,9 @@ class MakersBnB < Sinatra::Base
     erb :"postings"
   end
 
+  get '/postings/:id' do
+    # post_id = params[:id]
+    erb :"postings/view_post"
+  end
+
 end

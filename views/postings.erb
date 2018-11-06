@@ -3,6 +3,9 @@
   <% @postings.each do |post| %>
   <li>
     <%= post.post %>
+    <form action="/postings/<%=post.id%>" method="get">
+      <input type="submit" value="Book">
+    </form>
   </li>
   <% end %>
 </ul>
