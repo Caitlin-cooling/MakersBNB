@@ -10,9 +10,7 @@ feature 'logging in' do
   end
 
   scenario 'user can log in with their details' do
-    fill_in :email, with: "stan@stan.com"
-    fill_in :password, with: "password123"
-    click_button "Submit"
+    log_in
     expect(page).to have_content "Welcome Stan Testson"
   end
 

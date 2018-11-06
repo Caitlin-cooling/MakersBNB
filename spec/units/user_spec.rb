@@ -54,7 +54,7 @@ describe User do
 
   describe '.find' do
     it 'finds a user with their email' do
-      user = User.find('stan@stan.com')
+      user = User.find_by_email('stan@stan.com')
       expect(user.id).to eq '1'
       expect(user.email).to eq 'stan@stan.com'
       expect(user.password).to eq BCrypt::Password.new(user.password)
@@ -62,7 +62,7 @@ describe User do
     end
 
     it 'does not find a user with incorrect email' do
-      expect(User.find('test@test.com')).to eq nil
+      expect(User.find_by_email('test@test.com')).to eq nil
     end
   end
 

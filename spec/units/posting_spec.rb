@@ -25,7 +25,7 @@ describe Posting do
   describe '#find(id)' do
     it 'retreives post from the database using the post id' do
       Posting.create('My new posting', 'New Home!', 78, '1')
-      post = Posting.find('1')
+      post = Posting.find_by_id('1')
       expect(post.title).to eq 'My new posting'
       expect(post.description).to eq 'New Home!'
       expect(post.price).to eq '78'
