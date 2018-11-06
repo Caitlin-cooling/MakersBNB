@@ -59,17 +59,19 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/postings/save_new' do
-    Posting.create(params[:description], '1')
+    Posting.create(params[:title], params[:description], params[:price], @current_user.id)
     redirect "/postings"
   end
 
   get '/postings' do
     @postings = Posting.all
-    erb :"postings"
+    erb :postings
   end
 
   get '/postings/:id' do
-    # post_id = params[:id]
+    post_id = params[:id]
+    @post = Posting.find(post_id)
+    @user = User.find_by_id(@post.user_id)
     erb :"postings/view_post"
   end
 

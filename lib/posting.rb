@@ -22,4 +22,9 @@ class Posting
       Posting.new(id: post['id'], title: post['title'], description: post['description'], price: post['price'], date: post['date'], user_id: post['user_id'])
     end
   end
+
+  def self.find(id)
+    result = DatabaseConnection.query("SELECT * FROM postings WHERE(id = '#{id}');")
+    Posting.new(id: result[0]['id'], title: result[0]['title'], description: result[0]['description'], price: result[0]['price'], date: result[0]['date'], user_id: result[0]['user_id'])
+  end
 end
