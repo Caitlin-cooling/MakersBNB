@@ -1,7 +1,7 @@
 require_relative 'database_connection'
 
 class Booking
-  attr_reader :id, :posting_id, :owner_id, :user_id
+  attr_reader :id, :posting_id, :owner_id, :user_id, :posting_class
 
   def self.create(posting_id:, owner_id:, user_id:)
     booking = DatabaseConnection.query("INSERT INTO bookings(posting_id, " \
@@ -29,11 +29,18 @@ class Booking
       owner_id: booking['owner_id'], user_id: booking['user_id'])
   end
 
-  def initialize(id:, posting_id:, owner_id:, user_id:)
+  def self.retrieve_postings(bookings)
+    bookings.map do |booking|
+      booking.posting_class.find(booking.posting_id)
+    end
+  end
+
+  def initialize(id:, posting_id:, owner_id:, user_id:, posting_class: Posting)
     @id = id
     @posting_id = posting_id
     @owner_id = owner_id
     @user_id = user_id
+    @posting_class = posting_class
   end
 
   private_class_method :create_instance
