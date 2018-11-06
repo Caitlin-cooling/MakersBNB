@@ -65,4 +65,11 @@ describe User do
       expect(User.find('test@test.com')).to eq nil
     end
   end
+
+  describe '.find_by_id' do
+    it 'finds the user when given an in' do
+      user = User.find_by_id('1')
+      expect(user.email).to eq 'stan@stan.com'
+    end
+  end
 end

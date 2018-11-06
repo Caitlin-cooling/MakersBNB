@@ -36,4 +36,10 @@ class User
     return unless user
     User.new(id: user['id'], name: user['name'], email: user['email'], password: user['password'])
   end
+
+  def self.find_by_id(id)
+    user = DatabaseConnection.query("SELECT * FROM users WHERE(id = '#{id}')").first
+    return unless user
+    User.new(id: user['id'], name: user['name'], email: user['email'], password: user['password'])
+  end
 end
