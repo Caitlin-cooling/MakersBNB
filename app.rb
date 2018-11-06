@@ -2,10 +2,16 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/user'
 require_relative 'enviroment_set_up'
+require_relative 'bnb_helpers'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
+  helpers BnBHelpers
+
+  before do
+    current_user
+  end
 
   get '/' do
     erb :index
@@ -24,7 +30,6 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/:id/home' do
-    @user = User.find(session[:email])
     erb :user_home
   end
 
