@@ -12,8 +12,7 @@ feature 'new postings' do
     expect(page).to have_content("Title")
     expect(page).to have_content("Description")
     expect(page).to have_content("Price per night (£)")
-    expect(page).to have_content("Available from (DD/MM/YY)")
-    expect(page).to have_content("Available to (DD/MM/YY)")
+    expect(page).to have_content "Date Available"
     expect(page).to have_selector(:button, "Submit")
   end
 
@@ -21,5 +20,4 @@ feature 'new postings' do
     create_new_posting
     expect(page).to have_content("Cool new place!")
   end
-
 end
