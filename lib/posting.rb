@@ -1,3 +1,5 @@
+require_relative 'database_connection'
+
 class Posting
 
   attr_reader :id, :title, :description, :price, :date, :user_id
