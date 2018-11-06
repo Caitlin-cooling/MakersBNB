@@ -1,10 +1,13 @@
 feature 'new postings' do
 
-  before do
-    visit('/postings/new')
+  scenario 'can get to new post page from user home page' do
+    sign_up_as_test_user
+    click_button "New Post"
+    expect(page).to have_content "List a space"
   end
 
   scenario 'user can add a new posting' do
+    visit('/postings/new')
     expect(page).to have_content("List a space")
     expect(page).to have_content("Title")
     expect(page).to have_content("Description")
@@ -15,6 +18,7 @@ feature 'new postings' do
   end
 
   scenario 'after posting a new posting, user ends up on overview page' do
+    visit('/postings/new')
     fill_in :post, with: "Cool new place!"
     fill_in :description, with: "You will love it!"
     click_button "Submit"

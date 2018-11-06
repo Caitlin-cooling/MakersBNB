@@ -7,4 +7,9 @@ feature 'Confirm Sign up' do
     expect(page).to have_current_path '/1/home'
     expect(page).to have_content 'Welcome Stan Testson'
   end
+
+  scenario 'can click to view listings from their home page' do
+    click_button "View Listings"
+    expect(page).to have_content 'Postings'
+  end
 end
