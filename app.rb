@@ -14,7 +14,9 @@ class MakersBnB < Sinatra::Base
   post '/sign_up' do
     valid_user = User.create(name: params[:name], email: params[:email], password: params[:password])
     if valid_user
-      redirect "/#{valid_user.first['id']}/home"
+      session[:id] = valid_user.first['id']
+      session[:email] = valid_user.first['email']
+      redirect "/#{session[:id]}/home"
     else
       flash.next[:warning] = 'Email already registered to an account'
       redirect '/'
@@ -22,7 +24,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/:id/home' do
-    @user = User.all.last
+    @user = User.find(session[:email])
     erb :user_home
   end
 
@@ -31,9 +33,13 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/session/new' do
-    # if User.authenticate(params[:email], params[:password])
-    #   redirect '/'
-    # end
+    if (user = User.authenticate(params[:email], params[:password]))
+      session[:id], session[:email] = user.id, user.email
+      redirect "/#{session[:id]}/home"
+    else
+      flash.next[:warning] = 'Email or password is incorrect.'
+      redirect '/log_in'
+    end
   end
 
   get '/postings/new' do

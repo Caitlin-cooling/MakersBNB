@@ -27,13 +27,13 @@ class User
   def self.authenticate(email, password)
     user = find(email)
     return unless user
-    return unless BCrypt::Password.new(user['password']) == password
-    user['id']
+    return unless BCrypt::Password.new(user.password) == password
+    user
   end
 
   def self.find(email)
-    DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
+    user = DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
+    return unless user
+    User.new(id: user['id'], name: user['name'], email: user['email'], password: user['password'])
   end
-
-  private_class_method :find
 end

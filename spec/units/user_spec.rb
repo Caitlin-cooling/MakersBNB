@@ -35,7 +35,10 @@ describe User do
   describe '.authenticate' do
     it 'authenticates a user log in' do
       user = User.authenticate("stan@stan.com", "password123")
-      expect(user).to eq '1'
+      expect(user.id).to eq '1'
+      expect(user.email).to eq 'stan@stan.com'
+      expect(user.password).to eq BCrypt::Password.new(user.password)
+      expect(user.name).to eq 'Stan Testson'
     end
 
     it 'returns nil if user email doesnt exist' do
@@ -46,6 +49,20 @@ describe User do
     it 'returns nil if password is incorrect' do
       user = User.authenticate("stan@stan.com", "test123")
       expect(user).to eq nil
+    end
+  end
+
+  describe '.find' do
+    it 'finds a user with their email' do
+      user = User.find('stan@stan.com')
+      expect(user.id).to eq '1'
+      expect(user.email).to eq 'stan@stan.com'
+      expect(user.password).to eq BCrypt::Password.new(user.password)
+      expect(user.name).to eq 'Stan Testson'
+    end
+
+    it 'does not find a user with incorrect email' do
+      expect(User.find('test@test.com')).to eq nil
     end
   end
 end
