@@ -47,6 +47,12 @@ class MakersBnB < Sinatra::Base
     end
   end
 
+  post '/session/destroy' do
+    session.clear
+    flash.next[:message] = 'You have signed out.'
+    redirect '/'
+  end
+
   get '/postings/new' do
     erb :"postings/new"
   end

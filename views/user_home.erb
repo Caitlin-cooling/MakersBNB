@@ -1,1 +1,5 @@
 Welcome <%= @current_user.name %>
+
+<form action='/session/destroy' method='post'>
+  <input type='submit' value='Log out'>
+</form>
