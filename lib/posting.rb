@@ -15,9 +15,9 @@ class Posting
   end
 
   def self.all
-    result = DatabaseConnection.query("SELECT * FROM postings;")
+    result = DatabaseConnection.query("SELECT * FROM postings ORDER BY date DESC;")
     result.map do |post|
-      Posting.new(id: result[0]['id'], post: result[0]['post'], date: result[0]['date'], user_id: result[0]['user_id'])
+      Posting.new(id: post['id'], post: post['post'], date: post['date'], user_id: post['user_id'])
     end
   end
 end
