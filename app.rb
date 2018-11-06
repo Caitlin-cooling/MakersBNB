@@ -22,4 +22,14 @@ class MakersBnB < Sinatra::Base
   get '/postings/new' do
     erb :"postings/new"
   end
+
+  post '/postings/save_new' do
+    Posting.create(params[:post], '1')
+    redirect "/postings"
+  end
+
+  get '/postings' do
+    "Cool new place!"
+  end
+
 end
