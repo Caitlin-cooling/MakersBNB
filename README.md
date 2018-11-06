@@ -2,6 +2,7 @@
 
 ### User Stories
 
+#### For our minimum viable product
 ```
 As a user,
 So I can visit MakersBNB,
@@ -27,6 +28,17 @@ I would like my contact details to be shown on my space listing
 As a user,
 So I can continue using MakersBnB,
 I would like to log in and log out
+```
+#### After completing our MVP
+```
+As a space owner,
+So other users can contact me,
+I would like my email address and name to be shown on my space listing
+
+As a space owner,
+So that I can advertise my space,
+I can name my space, provide a short description of the space, and a price per night.
+
 ```
 
 ### Database Set Up
