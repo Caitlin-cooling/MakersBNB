@@ -13,7 +13,7 @@ class User
   end
 
   def self.create(name:, email:, password:)
-    return if exists?(email)
+    return if find(email)
     DatabaseConnection.query("INSERT INTO users(name,email,password) VALUES('#{name}', '#{email}', '#{BCrypt::Password.create(password)}') RETURNING id, name, email, password;")
   end
 
@@ -25,16 +25,15 @@ class User
   end
 
   def self.authenticate(email, password)
-      user  = DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
-      return unless user
-      return unless BCrypt::Password.new(user['password']) == password
-      user['id']
+    user = find(email)
+    return unless user
+    return unless BCrypt::Password.new(user['password']) == password
+    user['id']
   end
 
-  def self.exists?(email)
-    return true if DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
-    false
+  def self.find(email)
+    DatabaseConnection.query("SELECT * FROM users WHERE(email = '#{email}')").first
   end
 
-  private_class_method :exists?
+  private_class_method :find
 end
