@@ -2,7 +2,7 @@ feature 'logging in' do
   before do
     visit '/'
     click_button 'Log in'
-    insert_user_into_test_database
+    insert_users_into_test_database
   end
 
   scenario 'clicking login button takes user to login page' do
