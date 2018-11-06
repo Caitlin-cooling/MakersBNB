@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/user'
+require './lib/posting'
 require_relative 'enviroment_set_up'
 
 class MakersBnB < Sinatra::Base
@@ -29,7 +30,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/postings' do
-    "Cool new place!"
+    @postings = Posting.all
+    erb :"postings"
   end
 
 end

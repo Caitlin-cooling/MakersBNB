@@ -1,0 +1,8 @@
+<h1>Latest Postings</h1>
+<ul>
+  <% @postings.each do |post| %>
+  <li>
+    <%= post.post %>
+  </li>
+  <% end %>
+</ul>
