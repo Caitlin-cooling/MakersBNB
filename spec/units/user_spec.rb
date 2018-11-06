@@ -2,7 +2,7 @@ require 'user'
 
 describe User do
 
-  let(:test_user) {{name: 'Stan Testson', email: 'stan@stan.com', password: 'password123'}}
+  let(:test_user) {{name: 'Stan Testson', email: 'stan2@testson.com', password: 'password123'}}
 
   before do
     insert_user_into_test_database
@@ -16,6 +16,10 @@ describe User do
       expect(user['password']).to eq BCrypt::Password.new(user['password'])
       expect(user['id']).to eq '2'
     end
+
+    it 'returns nil if email already exists in database' do
+      expect(insert_user_into_test_database).to eq nil
+    end
   end
 
   describe '.all' do
@@ -23,8 +27,42 @@ describe User do
       user = User.all.first
       expect(user.id).to eq '1'
       expect(user.name).to eq test_user[:name]
-      expect(user.email).to eq test_user[:email]
+      expect(user.email).to eq 'stan@stan.com'
       expect(user.password).to eq BCrypt::Password.new(user.password)
+    end
+  end
+
+  describe '.authenticate' do
+    it 'authenticates a user log in' do
+      user = User.authenticate("stan@stan.com", "password123")
+      expect(user.id).to eq '1'
+      expect(user.email).to eq 'stan@stan.com'
+      expect(user.password).to eq BCrypt::Password.new(user.password)
+      expect(user.name).to eq 'Stan Testson'
+    end
+
+    it 'returns nil if user email doesnt exist' do
+      user = User.authenticate("stan@test.com", "password123")
+      expect(user).to eq nil
+    end
+
+    it 'returns nil if password is incorrect' do
+      user = User.authenticate("stan@stan.com", "test123")
+      expect(user).to eq nil
+    end
+  end
+
+  describe '.find' do
+    it 'finds a user with their email' do
+      user = User.find('stan@stan.com')
+      expect(user.id).to eq '1'
+      expect(user.email).to eq 'stan@stan.com'
+      expect(user.password).to eq BCrypt::Password.new(user.password)
+      expect(user.name).to eq 'Stan Testson'
+    end
+
+    it 'does not find a user with incorrect email' do
+      expect(User.find('test@test.com')).to eq nil
     end
   end
 end

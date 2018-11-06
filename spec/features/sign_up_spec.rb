@@ -8,6 +8,11 @@ feature 'Confirm Sign up' do
     expect(page).to have_content 'Welcome Stan Testson'
   end
 
+  scenario 'cannot sign up if user with same email already exists' do
+    sign_up_as_test_user
+    expect(page).to have_content 'Email already registered to an account'
+  end
+  
   scenario 'can click to view listings from their home page' do
     click_button "View Listings"
     expect(page).to have_content 'Postings'
