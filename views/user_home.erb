@@ -1,4 +1,13 @@
-Welcome <%= @current_user.name %>
+<h1>Welcome <%= @current_user.name %></h1>
+<form action="/postings/new" method="get">
+  Create a new listing
+  <input type="submit" value="New Post">
+</form>
+
+<form action="/postings" method="get">
+  View available listings
+  <input type="submit" value="View Listings">
+</form>
 
 <form action='/session/destroy' method='post'>
   <input type='submit' value='Log out'>
