@@ -18,10 +18,7 @@ feature 'new postings' do
   end
 
   scenario 'after posting a new posting, user ends up on overview page' do
-    visit('/postings/new')
-    fill_in :title, with: "Cool new place!"
-    fill_in :description, with: "You will love it!"
-    click_button "Submit"
+    create_new_posting
     expect(page).to have_content("Cool new place!")
   end
 
