@@ -10,8 +10,15 @@ class Booking
     create_instance(booking)
   end
 
-  def self.submitted_bookings(user_id)
-    bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE user_id = '#{user_id}'")
+  def self.submitted_bookings(current_user_id)
+    bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE user_id = '#{current_user_id}'")
+    bookings.map do |booking|
+      create_instance(booking)
+    end
+  end
+
+  def self.received_bookings(current_user_id)
+    bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE owner_id = '#{current_user_id}'")
     bookings.map do |booking|
       create_instance(booking)
     end

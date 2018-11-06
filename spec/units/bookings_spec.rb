@@ -27,5 +27,25 @@ describe Booking do
     it "should retrieve a list of bookings" do
       expect(Booking.submitted_bookings(booking_info[:user_id])).to be_a Array
     end
+
+    it 'should retrieve a booking with the correct user id' do
+      bookings = Booking.submitted_bookings(booking_info[:user_id])
+      expect(bookings.first.user_id).to eq booking_info[:user_id]
+    end
+  end
+
+  describe '.received_bookings' do
+    before do
+      insert_booking_into_test_database
+    end
+
+    it 'should retrieve a list of bookings' do
+      expect(Booking.received_bookings(booking_info[:owner_id])).to be_a Array
+    end
+
+    it 'should retrieve a booking with the correct user id' do
+      bookings = Booking.received_bookings(booking_info[:owner_id])
+      expect(bookings.first.owner_id).to eq booking_info[:owner_id]
+    end
   end
 end
