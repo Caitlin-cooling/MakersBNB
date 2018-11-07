@@ -77,7 +77,7 @@ class MakersBnB < Sinatra::Base
 
   post '/postings/save_new' do
     Posting.create(params[:title], params[:description], params[:price], \
-                   @current_user.id)
+                   @current_user.id, params[:date_from], params[:date_to])
     redirect '/postings'
   end
 
