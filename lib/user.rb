@@ -22,7 +22,7 @@ class User
     users = DatabaseConnection.query('SELECT * FROM users')
     users.map do |user|
       User.new(id: user['id'], name: user['name'], email: user['email'], \
-        password: user['password'])
+               password: user['password'])
     end
   end
 
@@ -38,7 +38,7 @@ class User
       WHERE(email = '#{email}')").first
     return unless user
     User.new(id: user['id'], name: user['name'], email: user['email'], \
-      password: user['password'])
+             password: user['password'])
   end
 
   def self.find_by_id(id)
@@ -46,6 +46,6 @@ class User
       WHERE(id = '#{id}')").first
     return unless user
     User.new(id: user['id'], name: user['name'], email: user['email'], \
-      password: user['password'])
+             password: user['password'])
   end
 end

@@ -25,5 +25,4 @@ feature 'viewing bookings' do
     expect(page).to have_button 'Accept'
     expect(page).to have_button 'Decline'
   end
-
 end

@@ -1,8 +1,10 @@
 require 'user'
 
 describe User do
-  let(:test_user) { { name: 'Stan Testson', email: 'stan2@testson.com', \
-    password: 'password123' } }
+  let(:test_user) do
+    { name: 'Stan Testson', email: 'stan2@testson.com', \
+      password: 'password123' }
+  end
 
   before do
     insert_users_into_test_database
@@ -11,7 +13,7 @@ describe User do
   describe '.create' do
     it 'inserts the user into the database' do
       user = User.create(name: test_user[:name], email: test_user[:email], \
-        password: test_user[:password]).first
+                         password: test_user[:password]).first
       expect(user['name']).to eq test_user[:name]
       expect(user['email']).to eq test_user[:email]
       expect(user['password']).to eq BCrypt::Password.new(user['password'])
@@ -20,7 +22,7 @@ describe User do
 
     it 'returns nil if email already exists in database' do
       expect(User.create(name: test_user[:name], email: 'stan@stan.com', \
-        password: test_user[:password])).to eq nil
+                         password: test_user[:password])).to eq nil
     end
   end
 
