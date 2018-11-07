@@ -1,5 +1,4 @@
 feature 'home page' do
-
   before do
     visit '/'
   end

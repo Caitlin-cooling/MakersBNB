@@ -1,10 +1,10 @@
 require 'posting'
 
 describe Posting do
-
   before do
     connection = PG.connect(dbname: 'makersbnb_test')
-    connection.exec("INSERT INTO users(name, email, password) VALUES('irina', 'irina@mail.com', 'xxxx')")
+    connection.exec("INSERT INTO users(name, email, password) \
+    VALUES('irina', 'irina@mail.com', 'xxxx')")
   end
 
   describe '#create' do
@@ -13,7 +13,7 @@ describe Posting do
     end
   end
 
-  describe "#all" do
+  describe '#all' do
     it 'returns a list of all the postings' do
       Posting.create('My new posting', 'New Home!', 78, '1', "06/11/2018", "07/11/2018")
       post = Posting.all.first

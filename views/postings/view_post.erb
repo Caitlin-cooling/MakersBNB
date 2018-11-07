@@ -3,5 +3,14 @@
 <p>The price is: £<%= @post.price %></p>
 <p>Available from: <%= @post.date_from %> </p>
 <p>Available to: <%= @post.date_to %> </p>
-<p><%= @user.name %><br><%= @user.email %></p>
-<button type="button">Request Booking</button>
+<p><%= @owner.name %><br><%= @owner.email %></p>
+<form action="/postings/<%= @post.id %>/book" method="post">
+  <input type="hidden" name="owner_id" value="<%= @owner.id %>" >
+  <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
+  <input type="hidden" name="posting_id" value="<%= @post.id %>" >
+  <input type="submit" value="Submit Booking" >
+</form>
+<%= flash[:message]%>
+<form action="/<%= @current_user.id %>/home" method='get'>
+  <input type='submit' value='Home'>
+</form>

@@ -1,0 +1,5 @@
+<% @bookings.each_with_index do |booking, index| %>
+<h1><%= @postings[index].title %></h1>
+<p>£<%= @postings[index].price %></p>
+<p><%= @bookers[index].name %><br><%= @bookers[index].email %></p>
+<% end %>

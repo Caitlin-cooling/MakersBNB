@@ -1,7 +1,8 @@
+require_relative 'database_connection'
+
 class Posting
-
   attr_reader :id, :title, :description, :price, :date, :user_id, :date_from, :date_to
-
+  
   def initialize(id:, title:, description:, price:, date:, user_id:, date_from:, date_to:)
     @id = id
     @title = title
@@ -19,7 +20,7 @@ class Posting
   end
 
   def self.all
-    result = DatabaseConnection.query("SELECT * FROM postings ORDER BY date DESC;")
+    result = DatabaseConnection.query('SELECT * FROM postings ORDER BY date DESC;')
     result.map do |post|
       Posting.new(id: post['id'], title: post['title'], description: post['description'], price: post['price'], date: post['date'], user_id: post['user_id'], date_from: post['date_from'], date_to: post['date_to'])
     end
