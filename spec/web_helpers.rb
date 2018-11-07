@@ -16,6 +16,8 @@ def insert_users_into_test_database
 end
 
 def log_in
+  visit '/'
+  click_button 'Log in'
   fill_in :email, with: 'stan@stan.com'
   fill_in :password, with: 'password123'
   click_button 'Submit'

@@ -77,4 +77,17 @@ describe Booking do
       Booking.retrieve_owners(bookings)
     end
   end
+
+  describe '.retrieve_bookers' do
+    before do
+      insert_booking_into_test_database
+    end
+
+    it 'should retrieve associated booking users from a booking' do
+      bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
+        user_id: '2', user_class: user_class)]
+      expect(user_class).to receive(:find_by_id).with(bookings.first.user_id)
+      Booking.retrieve_bookers(bookings)
+    end
+  end
 end

@@ -43,6 +43,13 @@ class MakersBnB < Sinatra::Base
     erb :"bookings/submitted"
   end
 
+  get '/:id/bookings/received' do
+    @bookings = Booking.received_bookings(@current_user.id)
+    @postings = Booking.retrieve_postings(@bookings)
+    @bookers = Booking.retrieve_bookers(@bookings)
+    erb :"bookings/received"
+  end
+
   get '/log_in' do
     erb :log_in
   end

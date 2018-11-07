@@ -43,6 +43,12 @@ class Booking
     end
   end
 
+  def self.retrieve_bookers(bookings)
+    bookings.map do |booking|
+      booking.user_class.find_by_id(booking.user_id)
+    end
+  end
+
   def initialize(id:, posting_id:, owner_id:, user_id:, posting_class: Posting, user_class: User)
     @id = id
     @posting_id = posting_id
