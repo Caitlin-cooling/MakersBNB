@@ -1,19 +1,20 @@
 require 'posting'
 
 describe Posting do
-
   before do
     connection = PG.connect(dbname: 'makersbnb_test')
-    connection.exec("INSERT INTO users(name, email, password) VALUES('irina', 'irina@mail.com', 'xxxx')")
+    connection.exec("INSERT INTO users(name, email, password) \
+    VALUES('irina', 'irina@mail.com', 'xxxx')")
   end
 
   describe '#create' do
     it 'create a new posting' do
-      expect(Posting.create('My new posting', 'Great place', 55, '1')).to be_an_instance_of(Posting)
+      expect(Posting.create('My new posting', 'Great place', 55, '1')).\
+      to be_an_instance_of(Posting)
     end
   end
 
-  describe "#all" do
+  describe '#all' do
     it 'returns a list of all the postings' do
       Posting.create('My new posting', 'New Home!', 78, '1')
       post = Posting.all.first

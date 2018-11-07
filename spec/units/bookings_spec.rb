@@ -1,8 +1,8 @@
 require 'booking'
 
 describe Booking do
-  let(:booking_info) { { posting_id: '1', owner_id: '1', user_id: '2'} }
-  let(:posting_class) { double(:posting_class)}
+  let(:booking_info) { { posting_id: '1', owner_id: '1', user_id: '2' } }
+  let(:posting_class) { double(:posting_class) }
 
   before do
     insert_users_into_test_database
@@ -26,7 +26,7 @@ describe Booking do
       insert_booking_into_test_database
     end
 
-    it "should retrieve a list of bookings" do
+    it 'should retrieve a list of bookings' do
       expect(Booking.submitted_bookings(booking_info[:user_id])).to be_a Array
     end
 
@@ -57,7 +57,8 @@ describe Booking do
     end
 
     it 'should retrieve associated postings from a booking' do
-      bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', user_id: '2', posting_class: posting_class)]
+      bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
+        user_id: '2', posting_class: posting_class)]
       expect(posting_class).to receive(:find).with(bookings.first.posting_id)
       Booking.retrieve_postings(bookings)
     end

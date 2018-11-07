@@ -1,8 +1,8 @@
 require 'user'
 
 describe User do
-
-  let(:test_user) {{name: 'Stan Testson', email: 'stan2@testson.com', password: 'password123'}}
+  let(:test_user) { { name: 'Stan Testson', email: 'stan2@testson.com', \
+    password: 'password123' } }
 
   before do
     insert_users_into_test_database
@@ -10,7 +10,8 @@ describe User do
 
   describe '.create' do
     it 'inserts the user into the database' do
-      user = User.create(name: test_user[:name], email: test_user[:email], password: test_user[:password]).first
+      user = User.create(name: test_user[:name], email: test_user[:email], \
+        password: test_user[:password]).first
       expect(user['name']).to eq test_user[:name]
       expect(user['email']).to eq test_user[:email]
       expect(user['password']).to eq BCrypt::Password.new(user['password'])
@@ -18,7 +19,8 @@ describe User do
     end
 
     it 'returns nil if email already exists in database' do
-      expect(User.create(name: test_user[:name], email: 'stan@stan.com', password: test_user[:password])).to eq nil
+      expect(User.create(name: test_user[:name], email: 'stan@stan.com', \
+        password: test_user[:password])).to eq nil
     end
   end
 
@@ -34,7 +36,7 @@ describe User do
 
   describe '.authenticate' do
     it 'authenticates a user log in' do
-      user = User.authenticate("stan@stan.com", "password123")
+      user = User.authenticate('stan@stan.com', 'password123')
       expect(user.id).to eq '1'
       expect(user.email).to eq 'stan@stan.com'
       expect(user.password).to eq BCrypt::Password.new(user.password)
@@ -42,12 +44,12 @@ describe User do
     end
 
     it 'returns nil if user email doesnt exist' do
-      user = User.authenticate("stan@test.com", "password123")
+      user = User.authenticate('stan@test.com', 'password123')
       expect(user).to eq nil
     end
 
     it 'returns nil if password is incorrect' do
-      user = User.authenticate("stan@stan.com", "test123")
+      user = User.authenticate('stan@stan.com', 'test123')
       expect(user).to eq nil
     end
   end

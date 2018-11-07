@@ -19,7 +19,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_up' do
-    valid_user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    valid_user = User.create(name: params[:name], email: params[:email], \
+                             password: params[:password])
     if valid_user
       session[:id] = valid_user.first['id']
       session[:email] = valid_user.first['email']
@@ -40,7 +41,8 @@ class MakersBnB < Sinatra::Base
 
   post '/session/new' do
     if (user = User.authenticate(params[:email], params[:password]))
-      session[:id], session[:email] = user.id, user.email
+      session[:id] = user.id
+      session[:email] = user.email
       redirect "/#{session[:id]}/home"
     else
       flash.next[:warning] = 'Email or password is incorrect.'
@@ -59,8 +61,9 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/postings/save_new' do
-    Posting.create(params[:title], params[:description], params[:price], @current_user.id)
-    redirect "/postings"
+    Posting.create(params[:title], params[:description], params[:price], \
+                   @current_user.id)
+    redirect '/postings'
   end
 
   get '/postings' do
