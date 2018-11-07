@@ -3,6 +3,7 @@ require 'booking'
 describe Booking do
   let(:booking_info) { { posting_id: '1', owner_id: '1', user_id: '2' } }
   let(:posting_class) { double(:posting_class) }
+  let(:user_class) { double(:user_class) }
 
   before do
     insert_users_into_test_database
@@ -51,7 +52,7 @@ describe Booking do
     end
   end
 
-  describe '#retrieve_postings' do
+  describe '.retrieve_postings' do
     before do
       insert_booking_into_test_database
     end
@@ -59,8 +60,21 @@ describe Booking do
     it 'should retrieve associated postings from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
         user_id: '2', posting_class: posting_class)]
-      expect(posting_class).to receive(:find).with(bookings.first.posting_id)
+      expect(posting_class).to receive(:find_by_id).with(bookings.first.posting_id)
       Booking.retrieve_postings(bookings)
+    end
+  end
+
+  describe '.retrieve_owners' do
+    before do
+      insert_booking_into_test_database
+    end
+
+    it 'should retrieve associated owners from a booking' do
+      bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
+        user_id: '2', user_class: user_class)]
+      expect(user_class).to receive(:find_by_id).with(bookings.first.owner_id)
+      Booking.retrieve_owners(bookings)
     end
   end
 end
