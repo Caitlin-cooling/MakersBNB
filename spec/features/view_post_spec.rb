@@ -8,5 +8,7 @@ feature 'view post' do
     expect(page).to have_content "You will love it!"
     expect(page).to have_content "The price is: £5"
     expect(page).to have_content "Stan Testson"
+    expect(page).to have_content "2018-11-06"
+
   end
 end
