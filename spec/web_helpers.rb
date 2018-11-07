@@ -39,3 +39,11 @@ def create_new_posting
   fill_in :price, with: 5
   click_button 'Submit'
 end
+
+def log_in_as_second_user
+  visit('/')
+  click_button 'Log in'
+  fill_in :email,with: 'albobson@gmail.com'
+  fill_in :password,with: 'password321'
+  click_button 'Submit'
+end

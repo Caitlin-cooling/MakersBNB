@@ -1,5 +1,13 @@
-Welcome to MakersBnB!
+<head>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="../../public/reset.css">
+</head>
+  <form action='/log_in' method='get'>
+    <input type='submit' value='Log in'>
+  </form>
 
+  <%= flash[:message] %>
+<h1>Welcome to MakersBnB!</h1>
 <form action="/sign_up" method="post">
   <label for="name" type='text' value='name'></label>
   <input type="text" name='name' placeholder='Name'>
@@ -10,9 +18,3 @@ Welcome to MakersBnB!
   <input type="submit" value='Submit'>
 </form>
 <%= flash[:warning] %>
-
-<form action='/log_in' method='get'>
-  <input type='submit' value='Log in'>
-</form>
-
-<%= flash[:message] %>
