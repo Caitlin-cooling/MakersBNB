@@ -16,6 +16,8 @@ def insert_users_into_test_database
 end
 
 def log_in
+  visit '/'
+  click_button 'Log in'
   fill_in :email, with: 'stan@stan.com'
   fill_in :password, with: 'password123'
   click_button 'Submit'
@@ -38,4 +40,21 @@ def create_new_posting
   fill_in :description, with: 'You will love it!'
   fill_in :price, with: 5
   click_button 'Submit'
+end
+
+def log_in_as_second_user
+  visit('/')
+  click_button 'Log in'
+  fill_in :email,with: 'albobson@gmail.com'
+  fill_in :password,with: 'password321'
+  click_button 'Submit'
+end
+
+def request_booking_as_second_user
+  insert_users_into_test_database
+  insert_posting_into_test_database
+  log_in_as_second_user
+  click_button 'View Listings'
+  click_button 'Book'
+  click_button 'Submit Booking'
 end

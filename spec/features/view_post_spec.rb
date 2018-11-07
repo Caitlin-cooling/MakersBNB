@@ -9,4 +9,15 @@ feature 'view post' do
     expect(page).to have_content 'The price is: £5'
     expect(page).to have_content 'Stan Testson'
   end
+
+  scenario 'can request a booking and see confirmation' do
+    request_booking_as_second_user
+    expect(page).to have_content "Booking Confirmed"
+  end
+
+  scenario 'can click button to return to user home page' do
+    request_booking_as_second_user
+    click_button 'Home'
+    expect(page).to have_current_path '/2/home'
+  end
 end

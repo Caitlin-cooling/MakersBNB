@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/user'
 require './lib/posting'
+require './lib/booking'
 require_relative 'enviroment_set_up'
 require_relative 'bnb_helpers'
 
@@ -33,6 +34,20 @@ class MakersBnB < Sinatra::Base
 
   get '/:id/home' do
     erb :user_home
+  end
+
+  get '/:id/bookings/submitted' do
+    @bookings = Booking.submitted_bookings(@current_user.id)
+    @postings = Booking.retrieve_postings(@bookings)
+    @owners = Booking.retrieve_owners(@bookings)
+    erb :"bookings/submitted"
+  end
+
+  get '/:id/bookings/received' do
+    @bookings = Booking.received_bookings(@current_user.id)
+    @postings = Booking.retrieve_postings(@bookings)
+    @bookers = Booking.retrieve_bookers(@bookings)
+    erb :"bookings/received"
   end
 
   get '/log_in' do
@@ -74,7 +89,13 @@ class MakersBnB < Sinatra::Base
   get '/postings/:id' do
     post_id = params[:id]
     @post = Posting.find_by_id(post_id)
-    @user = User.find_by_id(@post.user_id)
+    @owner = User.find_by_id(@post.user_id)
     erb :"postings/view_post"
+  end
+
+  post '/postings/:id/book' do
+    Booking.create(posting_id: params[:posting_id], owner_id: params[:owner_id], user_id: params[:user_id])
+    flash.next[:message] = 'Booking Confirmed'
+    redirect "/postings/#{params[:posting_id]}"
   end
 end
