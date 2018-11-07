@@ -1,5 +1,13 @@
 require 'pg'
 
+if ENV['RACK_ENV'] != 'production'
+  require 'rspec/core/rake_task'
+
+  RSpec::Core::RakeTask.new :spec
+
+  task default: [:spec]
+end
+
 task :test_database_clean do
   connection = PG.connect(dbname: 'makersbnb_test')
   connection.exec("DROP TABLE IF EXISTS bookings, postings, users CASCADE;")
