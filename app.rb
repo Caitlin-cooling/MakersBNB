@@ -74,5 +74,4 @@ class MakersBnB < Sinatra::Base
     @user = User.find_by_id(@post.user_id)
     erb :"postings/view_post"
   end
-
 end
