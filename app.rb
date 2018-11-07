@@ -70,7 +70,7 @@ class MakersBnB < Sinatra::Base
 
   get '/postings/:id' do
     post_id = params[:id]
-    @post = Posting.find(post_id)
+    @post = Posting.find_by_id(post_id)
     @user = User.find_by_id(@post.user_id)
     erb :"postings/view_post"
   end
