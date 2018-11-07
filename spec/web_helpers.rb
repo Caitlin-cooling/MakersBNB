@@ -24,7 +24,7 @@ def log_in
 end
 
 def insert_posting_into_test_database
-  Posting.create('My first posting', 'Description', '100', '1')
+  Posting.create('My first posting', 'Description', '100', '1', "06/11/2018", "07/11/2018")
 end
 
 def insert_booking_into_test_database
