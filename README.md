@@ -41,12 +41,8 @@ I can name my space, provide a short description of the space, and a price per n
 
 ```
 
-### Database Set Up
-
-The project requires a development and a test database.
-1. Connect to psql
-2. Create the database using the 'psql' command 'CREATE DATABASE makersbnb;'
-3. Create the test database using the 'psql' command 'CREATE DATABASE makersbnb_test;'
-4. Connect to the database using 'psql' command '\c makersbnb'
-5. Run queries saved in db migration folder in the order they appear. Repeat for
-the test database.
+### How to set up the project environment
+1. `bundle install`
+2. `rake setup`
+3. Use `rspec` to run tests.
+4. Use `rackup config.ru` to run application at `http://localhost:9292`.
