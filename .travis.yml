@@ -1,5 +1,4 @@
 language: ruby
 
-before_install:
-- gem install rake
-- bundle exec rake setup
+before_script:
+  - psql -c 'create database makersbnb_test;' -U postgres
