@@ -2,7 +2,7 @@
 <ul>
   <% @postings.each do |post| %>
   <li>
-    <%= post.description %>
+    <%= post.title %>
     <form action="/postings/<%=post.id%>" method="get">
       <input type="submit" value="Book">
     </form>

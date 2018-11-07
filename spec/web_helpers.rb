@@ -35,7 +35,8 @@ def insert_booking_into_test_database
 end
 
 def create_new_posting
-  visit('/postings/new')
+  sign_up_as_test_user
+  visit '/postings/new'
   fill_in :title, with: 'Cool new place!'
   fill_in :description, with: 'You will love it!'
   fill_in :price, with: 5
