@@ -12,3 +12,7 @@
 <form action='/session/destroy' method='post'>
   <input type='submit' value='Log out'>
 </form>
+
+<form action="/<%= @current_user.id %>/bookings/submitted" method='get'>
+  <input type='submit' value='Your submitted bookings'>
+</form>

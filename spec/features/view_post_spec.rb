@@ -11,12 +11,13 @@ feature 'view post' do
   end
 
   scenario 'can request a booking and see confirmation' do
-    insert_users_into_test_database
-    insert_posting_into_test_database
-    log_in_as_second_user
-    click_button 'View Listings'
-    click_button 'Book'
-    click_button 'Request Booking'
+    request_booking_as_second_user
     expect(page).to have_content "Booking Confirmed"
+  end
+
+  scenario 'can click button to return to user home page' do
+    request_booking_as_second_user
+    click_button 'Home'
+    expect(page).to have_current_path '/2/home'
   end
 end

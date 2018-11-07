@@ -47,3 +47,12 @@ def log_in_as_second_user
   fill_in :password,with: 'password321'
   click_button 'Submit'
 end
+
+def request_booking_as_second_user
+  insert_users_into_test_database
+  insert_posting_into_test_database
+  log_in_as_second_user
+  click_button 'View Listings'
+  click_button 'Book'
+  click_button 'Submit Booking'
+end

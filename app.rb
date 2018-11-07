@@ -36,6 +36,10 @@ class MakersBnB < Sinatra::Base
     erb :user_home
   end
 
+  get '/:id/bookings/submitted' do
+    erb :"bookings/submitted"
+  end
+
   get '/log_in' do
     erb :log_in
   end
