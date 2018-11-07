@@ -3,7 +3,7 @@ require 'sinatra/flash'
 require './lib/user'
 require './lib/posting'
 require './lib/booking'
-require_relative 'enviroment_set_up'
+require_relative 'environment_set_up'
 require_relative 'bnb_helpers'
 
 class MakersBnB < Sinatra::Base

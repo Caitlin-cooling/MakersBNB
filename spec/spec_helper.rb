@@ -24,6 +24,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 RSpec.configure do |config|
+  config.before(:suite) do
+    connection = PG.connect(dbname: 'makersbnb_test')
+  end
+
   config.before(:each) do
     Rake::Task['test_database_clean'].execute
   end
