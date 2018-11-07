@@ -17,6 +17,7 @@ feature 'new postings' do
   end
 
   scenario 'after posting a new posting, user ends up on overview page' do
+    sign_up_as_test_user
     create_new_posting
     expect(page).to have_content('Cool new place!')
   end
