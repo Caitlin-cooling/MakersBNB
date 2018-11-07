@@ -19,6 +19,7 @@ describe Booking do
       expect(booking.owner_id).to eq '1'
       expect(booking.posting_id).to eq '1'
       expect(booking.user_id).to eq '2'
+      expect(booking.status).to eq 'Pending'
     end
   end
 

@@ -21,5 +21,9 @@ feature 'viewing bookings' do
     expect(page).to have_content 'Alice Bobson'
     expect(page).to have_content '£100'
     expect(page).to have_content 'albobson@gmail.com'
+    expect(page).to have_content 'Status: Pending'
+    expect(page).to have_button 'Accept'
+    expect(page).to have_button 'Decline'
   end
+
 end
