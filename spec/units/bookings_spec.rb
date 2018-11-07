@@ -1,4 +1,5 @@
 require 'booking'
+require 'pry'
 
 describe Booking do
   let(:booking_info) { { posting_id: '1', owner_id: '1', user_id: '2' } }
@@ -89,6 +90,17 @@ describe Booking do
         user_id: '2', user_class: user_class)]
       expect(user_class).to receive(:find_by_id).with(bookings.first.user_id)
       Booking.retrieve_bookers(bookings)
+    end
+  end
+
+  describe '.update_status' do
+    it 'updates the status to confirmed' do
+      insert_users_into_test_database
+      insert_posting_into_test_database
+      pending_booking = Booking.create(posting_id: '1', owner_id: '1', user_id: '2')
+      pending_booking.update_status('Confirmed')
+      accepted_booking = Booking.find_by_id(pending_booking.id)
+      expect(accepted_booking.status).to eq 'Confirmed'
     end
   end
 end
