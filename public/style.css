@@ -1,7 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif !important;
 }
-
 .background_image {
   position: fixed;
   left: 0;
@@ -35,16 +34,14 @@ body {
   margin-right: 20px;
 }
 
-.index_title {
+
+.title_text {
   color: white;
   text-shadow: -2px 2px #FF5660;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #FF5660;
-  margin-top: 10%;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 700;
-  font-size: 80px;
-  text-align: center;
 }
 
 .custom_button {
@@ -80,6 +77,21 @@ body {
   text-indent: 9px;
   margin-bottom: 5px;
 }
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FF5660;
+  float: left;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.topnav form {
+  display: block;
+  float: left;
+}
 
 article#index_flash {
   margin-top: 2%;
@@ -87,6 +99,17 @@ article#index_flash {
 }
 article#log_in_flash {
   margin-top: 2%;
+  text-align: center;
+}
+h1#index_title {
+  margin-top: 10%;
+  font-size: 80px;
+  text-align: center;
+}
+
+h1#user_home_text {
+  margin-top: 15%;
+  font-size: 80px;
   text-align: center;
 }
 
@@ -105,11 +128,11 @@ input#confirm_login {
   width: 18%;
 }
 
-form#sign_up {
+form#sign_up_form {
   margin-top: 2%;
   text-align: center;
 }
-form#log_in {
+form#log_in_form {
   margin-top: 2%;
   text-align: center;
 }

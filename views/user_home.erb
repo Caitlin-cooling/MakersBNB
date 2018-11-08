@@ -1,21 +1,23 @@
-<h1>Welcome <%= @current_user.name %></h1>
-<form action="/postings/new" method="get">
-  Create a new listing
-  <input type="submit" value="New Post">
-</form>
+<%= erb :'partials/head' %>
+<ul class='topnav'>
+  <form action="/postings/new" method="get">
+    <input type="submit" value="New Post">
+  </form>
 
-<form action="/postings" method="get">
-  View available listings
-  <input type="submit" value="View Listings">
-</form>
+  <form action="/postings" method="get">
+    <input type="submit" value="View Listings">
+  </form>
 
-<form action='/session/destroy' method='post'>
-  <input type='submit' value='Log out'>
-</form>
+  <form action="/<%= @current_user.id %>/bookings/submitted" method='get'>
+    <input type='submit' value='Your submitted bookings'>
+  </form>
 
-<form action="/<%= @current_user.id %>/bookings/submitted" method='get'>
-  <input type='submit' value='Your submitted bookings'>
-</form>
-<form action="/<%= @current_user.id %>/bookings/received" method='get'>
-  <input type='submit' value='Your received bookings'>
-</form>
+  <form action="/<%= @current_user.id %>/bookings/received" method='get'>
+    <input type='submit' value='Your received bookings'>
+  </form>
+
+  <form action='/session/destroy' method='post'>
+    <input type='submit' value='Log out'>
+  </form>
+</ul>
+<h1 id='user_home_text' class='title_text'>Welcome <%= @current_user.name %></h1>
