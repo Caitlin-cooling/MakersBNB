@@ -3,4 +3,8 @@
 <h3><%= @postings[index].description %></h3>
 <p>The price is: £<%= @postings[index].price %></p>
 <p><%= @owners[index].name %><br><%= @owners[index].email %></p>
+<p>Status: <%= booking.status %></p>
 <% end %>
+<form action="/<%= @current_user.id %>/home" method='get'>
+  <input type='submit' value='Home'>
+</form>

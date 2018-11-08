@@ -5,7 +5,10 @@
 <p>Status: <%= booking.status %></p>
 <form action="/:id/bookings/received/<%= booking.id %>" method='post'>
   <input name="_method" type="hidden" value="PATCH">
-  <input name="Confirmed" type="submit" value="Accept">
-  <input name="Declined" type="submit" value="Decline">
+  <input type="submit" name="Confirmed" value="Accept">
+  <input type="submit" name="Declined" value="Decline">
 </form>
 <% end %>
+<form action="/<%= @current_user.id %>/home" method='get'>
+  <input type='submit' value='Home'>
+</form>
