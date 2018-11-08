@@ -3,8 +3,9 @@
 <p>£<%= @postings[index].price %></p>
 <p><%= @bookers[index].name %><br><%= @bookers[index].email %></p>
 <p>Status: <%= booking.status %></p>
-<form>
-  <input type="submit" value="Accept">
-  <input type="submit" value="Decline">
+<form action="/:id/bookings/received/<%= booking.id %>" method='post'>
+  <input name="_method" type="hidden" value="PATCH">
+  <input name="Confirmed" type="submit" value="Accept">
+  <input name="Declined" type="submit" value="Decline">
 </form>
 <% end %>
