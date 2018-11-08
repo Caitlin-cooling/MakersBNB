@@ -96,7 +96,7 @@ class MakersBnB < Sinatra::Base
   post '/postings/:id/book' do
     Booking.create(posting_id: params[:posting_id], owner_id: params[:owner_id],
                    user_id: params[:user_id], booking_date: params[:booking_date])
-    flash.next[:message] = 'Booking Confirmed'
+    flash.next[:message] = 'Booking Requested'
     redirect "/postings/#{params[:posting_id]}"
   end
 end

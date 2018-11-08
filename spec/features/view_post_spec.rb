@@ -14,7 +14,7 @@ feature 'view post' do
 
   scenario 'can request a booking and see confirmation' do
     request_booking_as_second_user
-    expect(page).to have_content 'Booking Confirmed'
+    expect(page).to have_content 'Booking Requested'
   end
 
   scenario 'can click button to return to user home page' do
