@@ -1,21 +1,23 @@
 <%= erb :'partials/head' %>
 <div class='background_image'></div>
-<div class='index_content'>
-<form action='/log_in' method='get'>
-  <input id='log_in' class='custom_button' type='submit' value='Log in'>
-</form>
+<article class='index_content'>
+  <form action='/log_in' method='get'>
+    <input id='log_in' class='custom_button' type='submit' value='Log in'>
+  </form>
 
-<%= flash[:message] %>
+  <%= flash[:message] %>
 
-<h1 id='index_title'><b>MakersBnB</b></h1>
-<form id='sign_up' action="/sign_up" method="post">
-  <label for="name" type='text' value='name'></label>
-  <input class='info_entry' type="text" name='name' placeholder='Name'><br>
-  <label for="email" type='text' value='email'></label>
-  <input class='info_entry' type="text" name='email' placeholder='Email'><br>
-  <label for="password" type='text' value='password'></label>
-  <input class='info_entry' type="password" name='password' placeholder='Password'><br><br>
-  <input id='sign_up' class='custom_button' type="submit" value='Submit'>
-</form>
-<%= flash[:warning] %>
-</div>
+  <h1 id='index_title'><b>MakersBnB</b></h1>
+  <form id='sign_up' action="/sign_up" method="post">
+    <label for="name" type='text' value='name'></label>
+    <input class='info_entry' type="text" name='name' placeholder='Name'><br>
+    <label for="email" type='text' value='email'></label>
+    <input class='info_entry' type="text" name='email' placeholder='Email'><br>
+    <label for="password" type='text' value='password'></label>
+    <input class='info_entry' type="password" name='password' placeholder='Password'><br><br>
+    <input id='sign_up' class='custom_button' type="submit" value='Submit'>
+  </form>
+  <article id='index_flash' class='flash_message'>
+    <%= flash[:warning] %>
+  </article>
+</article>
