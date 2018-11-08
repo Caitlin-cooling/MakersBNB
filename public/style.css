@@ -1,6 +1,33 @@
 body {
   font-family: 'Roboto', sans-serif !important;
 }
+
+.background_image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url("https://i.imgur.com/ozh4EGo.jpg");
+  height: 800px;
+  background-size: cover;
+
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+}
+
+.index_content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .custom_button {
   border-radius: 10px;
   border-width: 3px;
