@@ -59,3 +59,14 @@ def request_booking_as_second_user
   click_button 'Book'
   click_button 'Submit Booking'
 end
+
+def log_in_as_two_users_accept_booking
+  request_booking_as_second_user
+  click_button 'Home'
+  click_button 'Log out'
+  log_in
+  click_button 'Your received bookings'
+  click_button 'Accept'
+  click_button 'Home'
+  click_button 'Log out'
+end
