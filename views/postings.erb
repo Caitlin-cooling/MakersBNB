@@ -1,10 +1,12 @@
-<h1>Postings</h1>
+<%= erb :'partials/head' %>
+<%= erb :'partials/nav_bar' %>
+<h1 class='listing_pages_title_text'>Postings</h1>
 <ul>
   <% @postings.each do |post| %>
-  <li>
+  <li class='jumbotron'>
     <%= post.title %>
     <form action="/postings/<%=post.id%>" method="get">
-      <input type="submit" value="Book">
+      <input id='view_posting' class='custom_button' type="submit" value="Book">
     </form>
   </li>
   <% end %>

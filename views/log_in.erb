@@ -1,9 +1,16 @@
-<form action="/session/new" method="post">
-  <label for="email" type='text' value='email'></label>
-  <input type="text" name='email' placeholder='Email'>
-  <label for="password" type='text' value='password'></label>
-  <input type="password" name='password' placeholder='Password'>
-  <input type="submit" value='Submit'>
-</form>
+<%= erb :'partials/head' %>
+<div class='background_image'></div>
+<article class='index_content'>
+  <h1 class='title_text' id='index_title'>MakersBnB</h1>
+  <form id='log_in_form' action="/session/new" method="post">
+    <label for="email" type='text' value='email'></label>
+    <input class='info_entry' type="text" name='email' placeholder='Email'><br>
+    <label for="password" type='text' value='password'></label>
+    <input class='info_entry' type="password" name='password' placeholder='Password'><br><br>
+    <input id='confirm_login' class='custom_button' type="submit" value='Submit'>
+  </form>
 
-<%= flash[:warning] %>
+  <article id='log_in_flash' class='flash_message'>
+    <%= flash[:warning] %>
+  </article>
+</article>

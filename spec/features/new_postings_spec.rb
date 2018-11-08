@@ -6,7 +6,8 @@ feature 'new postings' do
   end
 
   scenario 'user can add a new posting' do
-    visit('/postings/new')
+    sign_up_as_test_user
+    click_button 'New Post'
     expect(page).to have_content('List a space')
     expect(page).to have_content('Title')
     expect(page).to have_content('Description')
