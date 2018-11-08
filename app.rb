@@ -52,6 +52,8 @@ class MakersBnB < Sinatra::Base
   end
 
   patch '/:id/bookings/received/:booking_id' do
+    #Only way this seemed to work was by putting in the session again, will look at that later
+    # params[:id] = user.id
     @booking_id = params[:booking_id]
     @booking = Booking.find_by_id(@booking_id)
     @booking.update_status('Confirmed') if params[:Confirmed]
