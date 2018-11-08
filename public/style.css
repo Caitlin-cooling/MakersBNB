@@ -62,10 +62,18 @@ body {
 }
 .custom_button:hover {
   background-color: #D0464E;
-
 }
 .form_control:focus {
   outline: none;
+}
+.info_entry {
+  border-radius: 5px;
+  height: 32px;
+  border-width: 1px;
+  width: 18%;
+  font-size: 13px;
+  text-indent: 9px;
+  margin-bottom: 5px;
 }
 .nav_button {
   height: 50px;
@@ -81,14 +89,25 @@ body {
 .nav_button:hover {
   background-color: #FF5660;
 }
-.info_entry {
+.new_listing_label {
+  display: inline-block;
+  float: left;
+  width: 200px;
+  margin-top: 5px;
+  margin-left: 32%;
+  margin-bottom: 1%;
+  font-family: 'Poppins', sans-serif !important;
+}
+.new_listing_input {
+  display: inline-block;
+  float: left;
   border-radius: 5px;
   height: 32px;
   border-width: 1px;
-  width: 18%;
+  width: 20%;
   font-size: 13px;
   text-indent: 9px;
-  margin-bottom: 5px;
+  margin-bottom: 1%;
 }
 .topnav {
   list-style-type: none;
@@ -136,6 +155,11 @@ h1#user_home_title {
   font-size: 80px;
   text-align: center;
 }
+h1#new_listing_title {
+  margin-top: 10%;
+  font-size: 60px;
+  text-align: center;
+}
 h2#user_home_text {
   font-family: 'Poppins', sans-serif !important;
   font-size: 24px;
@@ -163,6 +187,12 @@ input#sign_up {
 input#confirm_login {
   margin-left: 0.5%;
   width: 18%;
+}
+input#new_listing_submit {
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 42.5%;
+  width: 15%;
 }
 
 form#sign_up_form {

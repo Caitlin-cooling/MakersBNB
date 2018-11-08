@@ -1,3 +1,5 @@
+<%= erb :'partials/head' %>
+<%= erb :'partials/nav_bar' %>
 <% @bookings.each_with_index do |booking, index| %>
 <h1><%= @postings[index].title %></h1>
 <p>£<%= @postings[index].price %></p>
