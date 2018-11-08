@@ -67,7 +67,20 @@ body {
 .form_control:focus {
   outline: none;
 }
-
+.nav_button {
+  height: 50px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.nav_button:hover {
+  background-color: #FF5660;
+}
 .info_entry {
   border-radius: 5px;
   height: 32px;
@@ -82,17 +95,22 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #FF5660;
+  background-color: white;
   float: left;
   position: fixed;
   top: 0;
   width: 100%;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
 }
 .topnav form {
   display: block;
   float: left;
 }
-
+.topnav h1 {
+  display: block;
+  float: left;
+}
 article#index_flash {
   margin-top: 2%;
   text-align: center;
@@ -106,11 +124,25 @@ h1#index_title {
   font-size: 80px;
   text-align: center;
 }
-
-h1#user_home_text {
+h1#topnav_title {
+  font-size: 32px;
+  text-shadow: -1px 1px #FF5660;
+  margin-left: 20px;
+  margin-top: 6px;
+  margin-right: 20px;
+}
+h1#user_home_title {
   margin-top: 15%;
   font-size: 80px;
   text-align: center;
+}
+h2#user_home_text {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2%;
+  color: #FF5660;
 }
 
 input#log_in {
@@ -118,7 +150,12 @@ input#log_in {
   right: 20px;
   top: 10px;
 }
-
+input#nav_log_out {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 15%;
+}
 input#sign_up {
   margin-left: 0.5%;
   width: 18%;

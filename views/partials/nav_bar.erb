@@ -1,0 +1,22 @@
+<ul class='topnav'>
+  <h1 id='topnav_title' class='title_text'>MakersBnB</h1>
+  <form action="/postings/new" method="get">
+    <input class='nav_button' type="submit" value="New Post">
+  </form>
+
+  <form action="/postings" method="get">
+    <input class='nav_button' type="submit" value="View Listings">
+  </form>
+
+  <form action="/<%= @current_user.id %>/bookings/submitted" method='get'>
+    <input class='nav_button' type='submit' value='Your submitted bookings'>
+  </form>
+
+  <form action="/<%= @current_user.id %>/bookings/received" method='get'>
+    <input class='nav_button' type='submit' value='Your received bookings'>
+  </form>
+
+  <form action='/session/destroy' method='post'>
+    <input id='nav_log_out' class='nav_button' type='submit' value='Log out'>
+  </form>
+</ul>

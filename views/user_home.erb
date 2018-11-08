@@ -1,23 +1,4 @@
 <%= erb :'partials/head' %>
-<ul class='topnav'>
-  <form action="/postings/new" method="get">
-    <input type="submit" value="New Post">
-  </form>
-
-  <form action="/postings" method="get">
-    <input type="submit" value="View Listings">
-  </form>
-
-  <form action="/<%= @current_user.id %>/bookings/submitted" method='get'>
-    <input type='submit' value='Your submitted bookings'>
-  </form>
-
-  <form action="/<%= @current_user.id %>/bookings/received" method='get'>
-    <input type='submit' value='Your received bookings'>
-  </form>
-
-  <form action='/session/destroy' method='post'>
-    <input type='submit' value='Log out'>
-  </form>
-</ul>
-<h1 id='user_home_text' class='title_text'>Welcome <%= @current_user.name %></h1>
+<%= erb :'partials/nav_bar' %>
+<h1 id='user_home_title' class='title_text'>Welcome <%= @current_user.name %></h1>
+<h2 id='user_home_text'>Please select from an option above.</h2>

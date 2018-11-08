@@ -5,7 +5,6 @@
     <input id='log_in' class='custom_button' type='submit' value='Log in'>
   </form>
 
-  <%= flash[:message] %>
 
   <h1 class='title_text' id='index_title'><b>MakersBnB</b></h1>
   <form id='sign_up_form' action="/sign_up" method="post">
@@ -19,5 +18,6 @@
   </form>
   <article id='index_flash' class='flash_message'>
     <%= flash[:warning] %>
+    <%= flash[:message] %>
   </article>
 </article>
