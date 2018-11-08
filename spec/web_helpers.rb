@@ -30,8 +30,8 @@ end
 def insert_booking_into_test_database
   insert_users_into_test_database
   insert_posting_into_test_database
-  DatabaseConnection.query("INSERT INTO bookings(posting_id,owner_id,user_id) \
-  VALUES('1','1','2');")
+  DatabaseConnection.query("INSERT INTO bookings(posting_id,owner_id,user_id,booking_date) \
+  VALUES('1','1','2','2018-11-08');")
 end
 
 def create_new_posting

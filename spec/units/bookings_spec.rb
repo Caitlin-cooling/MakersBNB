@@ -2,7 +2,7 @@ require 'booking'
 require 'pry'
 
 describe Booking do
-  let(:booking_info) { { posting_id: '1', owner_id: '1', user_id: '2' } }
+  let(:booking_info) { { posting_id: '1', owner_id: '1', user_id: '2' , booking_date: '2018-11-08'} }
   let(:posting_class) { double(:posting_class) }
   let(:user_class) { double(:user_class) }
 
@@ -15,13 +15,15 @@ describe Booking do
     it 'should create a booking object with correct info' do
       booking = Booking.create(owner_id: booking_info[:owner_id],
                                posting_id: booking_info[:posting_id],
-                               user_id: booking_info[:user_id])
+                               user_id: booking_info[:user_id],
+                             booking_date: booking_info[:booking_date])
       expect(booking).to be_a Booking
       expect(booking.id).to eq '1'
       expect(booking.owner_id).to eq '1'
       expect(booking.posting_id).to eq '1'
       expect(booking.user_id).to eq '2'
       expect(booking.status).to eq 'Pending'
+      expect(booking.booking_date).to eq '2018-11-08'
     end
   end
 
@@ -62,7 +64,7 @@ describe Booking do
 
     it 'should retrieve associated postings from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
-                              user_id: '2', posting_class: posting_class)]
+                              user_id: '2', posting_class: posting_class, booking_date: '2018-11-08')]
       expect(posting_class).to receive(:find_by_id).with(bookings.first.posting_id)
       Booking.retrieve_postings(bookings)
     end
@@ -75,7 +77,7 @@ describe Booking do
 
     it 'should retrieve associated owners from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
-                              user_id: '2', user_class: user_class)]
+                              user_id: '2', user_class: user_class, booking_date: '2018-11-08')]
       expect(user_class).to receive(:find_by_id).with(bookings.first.owner_id)
       Booking.retrieve_owners(bookings)
     end
@@ -88,7 +90,7 @@ describe Booking do
 
     it 'should retrieve associated booking users from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
-                              user_id: '2', user_class: user_class)]
+                              user_id: '2', user_class: user_class, booking_date: '2018-11-08')]
       expect(user_class).to receive(:find_by_id).with(bookings.first.user_id)
       Booking.retrieve_bookers(bookings)
     end
@@ -99,7 +101,7 @@ describe Booking do
       insert_users_into_test_database
       insert_posting_into_test_database
       pending_booking = Booking.create(posting_id: '1', owner_id: '1',
-                                       user_id: '2')
+                                       user_id: '2', booking_date: '2018-11-08')
       pending_booking.update_status('Confirmed')
       accepted_booking = Booking.find_by_id(pending_booking.id)
       expect(accepted_booking.status).to eq 'Confirmed'
@@ -109,7 +111,7 @@ describe Booking do
       insert_users_into_test_database
       insert_posting_into_test_database
       pending_booking = Booking.create(posting_id: '1', owner_id: '1',
-                                       user_id: '2')
+                                       user_id: '2', booking_date: '2018-11-08')
       pending_booking.update_status('Declined')
       accepted_booking = Booking.find_by_id(pending_booking.id)
       expect(accepted_booking.status).to eq 'Declined'
