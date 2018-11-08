@@ -4,7 +4,7 @@ feature 'home page' do
   end
 
   scenario 'viewing the title' do
-    expect(page).to have_content 'Welcome to MakersBnB!'
+    expect(page).to have_content 'MakersBnB'
   end
 
   scenario 'viewing sign up form' do

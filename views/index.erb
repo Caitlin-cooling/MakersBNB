@@ -1,20 +1,19 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="./style.css">
-  <link rel="stylesheet" type="text/css" href="../../public/reset.css">
-</head>
-  <form action='/log_in' method='get'>
-    <input type='submit' value='Log in'>
-  </form>
+<%= erb :'partials/head' %>
 
-  <%= flash[:message] %>
-<h1>Welcome to MakersBnB!</h1>
-<form action="/sign_up" method="post">
+<form action='/log_in' method='get'>
+  <input id='log_in' class='custom_button' type='submit' value='Log in'>
+</form>
+
+<%= flash[:message] %>
+
+<h1 id='index_title'><b>MakersBnB</b></h1>
+<form id='sign_up' action="/sign_up" method="post">
   <label for="name" type='text' value='name'></label>
-  <input type="text" name='name' placeholder='Name'>
+  <input class='info_entry' type="text" name='name' placeholder='Name'><br>
   <label for="email" type='text' value='email'></label>
-  <input type="text" name='email' placeholder='Email'>
+  <input class='info_entry' type="text" name='email' placeholder='Email'><br>
   <label for="password" type='text' value='password'></label>
-  <input type="password" name='password' placeholder='Password'>
-  <input type="submit" value='Submit'>
+  <input class='info_entry' type="password" name='password' placeholder='Password'><br><br>
+  <input id='sign_up' class='custom_button' type="submit" value='Submit'>
 </form>
 <%= flash[:warning] %>

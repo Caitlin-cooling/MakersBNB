@@ -1,12 +1,64 @@
-form {
+body {
+  font-family: 'Roboto', sans-serif !important;
+}
+.custom_button {
+  border-radius: 10px;
+  border-width: 3px;
+  color: white;
+  background-color: #FF5660;
+  height: 32px;
+  width: 5%;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.custom_button:hover {
+  background-color: #D0464E;
 
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+}
+.form_control:focus {
+  outline: none;
 }
 
-h1 {
-  font-family: helvetica;
-  font-size: 120px;
+.info_entry {
+  border-radius: 5px;
+  height: 32px;
+  border-width: 1px;
+  width: 18%;
+  font-size: 13px;
+  text-indent: 9px;
+  margin-bottom: 5px;
+}
+
+input#log_in {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+
+input#sign_up {
+  margin-left: 0.5%;
+  width: 18%;
+}
+
+h1#index_title {
+  color: white;
+  text-shadow: -2px 2px #FF5660;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FF5660;
+  margin-top: 10%;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  font-size: 80px;
+  text-align: center;
+}
+
+form#sign_up {
+  margin-top: 2%;
   text-align: center;
 }
