@@ -1,7 +1,8 @@
 require_relative 'database_connection'
 
 class Booking
-  attr_reader :id, :posting_id, :owner_id, :user_id, :posting_class, :user_class, :status
+  attr_reader :id, :posting_id, :owner_id, :user_id, :posting_class,
+              :user_class, :status
 
   def self.create(posting_id:, owner_id:, user_id:)
     booking = DatabaseConnection.query('INSERT INTO bookings(posting_id, ' \
@@ -28,7 +29,8 @@ class Booking
 
   def self.create_instance(booking)
     Booking.new(id: booking['id'], posting_id: booking['posting_id'],
-                owner_id: booking['owner_id'], user_id: booking['user_id'], status: booking['status'])
+                owner_id: booking['owner_id'], user_id: booking['user_id'],
+                status: booking['status'])
   end
 
   def self.retrieve_postings(bookings)
@@ -50,11 +52,13 @@ class Booking
   end
 
   def self.find_by_id(id)
-    bookings = DatabaseConnection.query("SELECT * FROM bookings WHERE(id = '#{id}')")
+    bookings = DatabaseConnection.query('SELECT * FROM bookings ' \
+      "WHERE(id = '#{id}')")
     create_instance(bookings[0])
   end
 
-  def initialize(id:, posting_id:, owner_id:, user_id:, posting_class: Posting, user_class: User, status: 'Pending')
+  def initialize(id:, posting_id:, owner_id:, user_id:, posting_class: Posting,
+                 user_class: User, status: 'Pending')
     @id = id
     @posting_id = posting_id
     @owner_id = owner_id
@@ -65,7 +69,8 @@ class Booking
   end
 
   def update_status(status)
-    DatabaseConnection.query("UPDATE bookings SET status = '#{status}' WHERE id = '#{@id}';")
+    DatabaseConnection.query("UPDATE bookings SET status = '#{status}' " \
+      "WHERE id = '#{@id}';")
   end
 
   private_class_method :create_instance

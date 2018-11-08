@@ -21,7 +21,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_up' do
-    valid_user = User.create(name: params[:name], email: params[:email], \
+    valid_user = User.create(name: params[:name], email: params[:email],
                              password: params[:password])
     if valid_user
       session[:id] = valid_user.first['id']
@@ -85,7 +85,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/postings/save_new' do
-    Posting.create(params[:title], params[:description], params[:price], \
+    Posting.create(params[:title], params[:description], params[:price],
                    @current_user.id, params[:date_from], params[:date_to])
     redirect '/postings'
   end
@@ -103,7 +103,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/postings/:id/book' do
-    Booking.create(posting_id: params[:posting_id], owner_id: params[:owner_id], user_id: params[:user_id])
+    Booking.create(posting_id: params[:posting_id], owner_id: params[:owner_id],
+                   user_id: params[:user_id])
     flash.next[:message] = 'Booking Confirmed'
     redirect "/postings/#{params[:posting_id]}"
   end

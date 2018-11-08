@@ -14,7 +14,8 @@ describe Booking do
   describe '.create' do
     it 'should create a booking object with correct info' do
       booking = Booking.create(owner_id: booking_info[:owner_id],
-        posting_id: booking_info[:posting_id], user_id: booking_info[:user_id])
+                               posting_id: booking_info[:posting_id],
+                               user_id: booking_info[:user_id])
       expect(booking).to be_a Booking
       expect(booking.id).to eq '1'
       expect(booking.owner_id).to eq '1'
@@ -61,7 +62,7 @@ describe Booking do
 
     it 'should retrieve associated postings from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
-        user_id: '2', posting_class: posting_class)]
+                              user_id: '2', posting_class: posting_class)]
       expect(posting_class).to receive(:find_by_id).with(bookings.first.posting_id)
       Booking.retrieve_postings(bookings)
     end
@@ -74,7 +75,7 @@ describe Booking do
 
     it 'should retrieve associated owners from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
-        user_id: '2', user_class: user_class)]
+                              user_id: '2', user_class: user_class)]
       expect(user_class).to receive(:find_by_id).with(bookings.first.owner_id)
       Booking.retrieve_owners(bookings)
     end
@@ -87,7 +88,7 @@ describe Booking do
 
     it 'should retrieve associated booking users from a booking' do
       bookings = [Booking.new(id: '1', posting_id: '1', owner_id: '1', \
-        user_id: '2', user_class: user_class)]
+                              user_id: '2', user_class: user_class)]
       expect(user_class).to receive(:find_by_id).with(bookings.first.user_id)
       Booking.retrieve_bookers(bookings)
     end
@@ -97,7 +98,8 @@ describe Booking do
     it 'updates the status to confirmed' do
       insert_users_into_test_database
       insert_posting_into_test_database
-      pending_booking = Booking.create(posting_id: '1', owner_id: '1', user_id: '2')
+      pending_booking = Booking.create(posting_id: '1', owner_id: '1',
+                                       user_id: '2')
       pending_booking.update_status('Confirmed')
       accepted_booking = Booking.find_by_id(pending_booking.id)
       expect(accepted_booking.status).to eq 'Confirmed'
@@ -106,11 +108,11 @@ describe Booking do
     it 'updates the status to declined' do
       insert_users_into_test_database
       insert_posting_into_test_database
-      pending_booking = Booking.create(posting_id: '1', owner_id: '1', user_id: '2')
+      pending_booking = Booking.create(posting_id: '1', owner_id: '1',
+                                       user_id: '2')
       pending_booking.update_status('Declined')
       accepted_booking = Booking.find_by_id(pending_booking.id)
       expect(accepted_booking.status).to eq 'Declined'
     end
-
   end
 end

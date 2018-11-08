@@ -24,7 +24,7 @@ def log_in
 end
 
 def insert_posting_into_test_database
-  Posting.create('My first posting', 'Description', '100', '1', "06/11/2018", "07/11/2018")
+  Posting.create('My first posting', 'Description', '100', '1', '06/11/2018', '07/11/2018')
 end
 
 def insert_booking_into_test_database
@@ -46,8 +46,8 @@ end
 def log_in_as_second_user
   visit('/')
   click_button 'Log in'
-  fill_in :email,with: 'albobson@gmail.com'
-  fill_in :password,with: 'password321'
+  fill_in :email, with: 'albobson@gmail.com'
+  fill_in :password, with: 'password321'
   click_button 'Submit'
 end
 
