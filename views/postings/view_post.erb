@@ -8,6 +8,8 @@
   <input type="hidden" name="owner_id" value="<%= @owner.id %>" >
   <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
   <input type="hidden" name="posting_id" value="<%= @post.id %>" >
+  <label>Booking date:</label>
+  <input type="date" name="booking_date" value="2018-11-08">
   <input type="submit" value="Submit Booking" >
 </form>
 <%= flash[:message]%>
