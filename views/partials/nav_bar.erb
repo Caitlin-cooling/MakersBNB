@@ -1,5 +1,10 @@
 <ul class='topnav'>
   <h1 id='topnav_title' class='title_text'>MakersBnB</h1>
+
+  <form action="/<%= @current_user.id %>/home" method='get'>
+    <input id='home_button' class='nav_button' type='submit' value='Home'>
+  </form>
+
   <form action="/postings/new" method="get">
     <input class='nav_button' type="submit" value="New Post">
   </form>

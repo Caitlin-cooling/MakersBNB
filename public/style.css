@@ -174,7 +174,16 @@ h2#user_home_text {
   margin-top: 2%;
   color: #FF5660;
 }
-
+input#accept {
+  width: 10%;
+}
+input#decline {
+  width: 10%;
+  background-color: #D0464E;
+}
+input#decline:hover {
+  background-color: #913136;
+}
 input#log_in {
   position: fixed;
   right: 20px;
@@ -193,6 +202,9 @@ input#sign_up {
 input#confirm_login {
   margin-left: 0.5%;
   width: 18%;
+}
+input#confirm_booking {
+  width: 15%;
 }
 input#new_listing_submit {
   text-align: center;

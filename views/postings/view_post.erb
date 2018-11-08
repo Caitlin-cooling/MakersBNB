@@ -11,9 +11,6 @@
   <input type="hidden" name="owner_id" value="<%= @owner.id %>" >
   <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
   <input type="hidden" name="posting_id" value="<%= @post.id %>" >
-  <input type="submit" value="Submit Booking" >
+  <input id='confirm_booking' class='custom_button' type="submit" value="Submit Booking" >
 </form>
 <%= flash[:message]%>
-<form action="/<%= @current_user.id %>/home" method='get'>
-  <input type='submit' value='Home'>
-</form>

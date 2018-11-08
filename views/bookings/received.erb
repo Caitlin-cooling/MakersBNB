@@ -7,7 +7,7 @@
 <p><%= @bookers[index].name %><br><%= @bookers[index].email %></p>
 <p>Status: <%= booking.status %></p>
 <form>
-  <input type="submit" value="Accept">
-  <input type="submit" value="Decline">
+  <input id='accept' class='custom_button' type="submit" value="Accept">
+  <input id='decline' class='custom_button' type="submit" value="Decline">
 </form>
 <% end %>
