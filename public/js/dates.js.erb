@@ -1,0 +1,14 @@
+var unavailableDates["2018-11-08", "2018-11-09", "2018-11-10"];
+
+function available(date) {
+  dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+  if($.myArray(dmy, unavailableDates) == -1) {
+    return [true, "", "Available"];
+  } else {
+    return [true, "", "Unavailable"];
+  };
+};
+
+$('#date').datepicker({
+  beforeShowDay: available
+});
