@@ -97,9 +97,13 @@ describe Booking do
   end
 
   describe '.update_status' do
-    it 'updates the status to confirmed' do
+
+    before do
       insert_users_into_test_database
       insert_posting_into_test_database
+    end
+
+    it 'updates the status to confirmed' do
       pending_booking = Booking.create(posting_id: '1', owner_id: '1',
                                        user_id: '2', booking_date: '2018-11-08')
       pending_booking.update_status('Confirmed')
@@ -108,8 +112,6 @@ describe Booking do
     end
 
     it 'updates the status to declined' do
-      insert_users_into_test_database
-      insert_posting_into_test_database
       pending_booking = Booking.create(posting_id: '1', owner_id: '1',
                                        user_id: '2', booking_date: '2018-11-08')
       pending_booking.update_status('Declined')

@@ -57,6 +57,7 @@ class Booking
     create_instance(bookings[0])
   end
 
+
   def initialize(id:, posting_id:, owner_id:, user_id:, posting_class: Posting,
                  user_class: User, status: 'Pending', booking_date:)
     @id = id
