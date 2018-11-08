@@ -67,6 +67,6 @@ def log_in_as_two_users_accept_booking
   log_in
   click_button 'Your received bookings'
   click_button 'Accept'
-  click_button 'Home'
+  first(:button, 'Home').click
   click_button 'Log out'
 end
