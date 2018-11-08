@@ -24,6 +24,7 @@ body {
   letter-spacing: 2.5px;
   font-weight: 700;
   color: #D0464E;
+  text-align: center;
 }
 .index_content {
   position: fixed;
@@ -75,6 +76,11 @@ body {
   text-indent: 9px;
   margin-bottom: 5px;
 }
+.jumbotron {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+}
 .listing_pages_title_text {
   color: white;
   text-shadow: -2px 2px #FF5660;
@@ -83,6 +89,7 @@ body {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 700;
   margin-top: 10%;
+  margin-bottom: 2%;
   font-size: 60px;
   text-align: center;
 }
@@ -132,6 +139,7 @@ body {
   width: 100%;
   border-style: solid;
   border-width: 0px 0px 1px 0px;
+  z-index: 1;
 }
 .topnav form {
   display: block;
@@ -143,11 +151,9 @@ body {
 }
 article#index_flash {
   margin-top: 2%;
-  text-align: center;
 }
 article#log_in_flash {
   margin-top: 2%;
-  text-align: center;
 }
 h1#index_title {
   margin-top: 10%;
@@ -175,11 +181,17 @@ h2#user_home_text {
   color: #FF5660;
 }
 input#accept {
-  width: 10%;
+  width: 40%;
+  position: absolute;
+  left: 9%;
+  bottom: 5;
 }
 input#decline {
-  width: 10%;
+  width: 40%;
   background-color: #D0464E;
+  position: absolute;
+  right: 9%;
+  bottom: 5;
 }
 input#decline:hover {
   background-color: #913136;
@@ -204,7 +216,10 @@ input#confirm_login {
   width: 18%;
 }
 input#confirm_booking {
-  width: 15%;
+  width: 30%;
+  position: absolute;
+  right: 5;
+  bottom: 5;
 }
 input#new_listing_submit {
   text-align: center;
@@ -212,7 +227,12 @@ input#new_listing_submit {
   margin-left: 42.5%;
   width: 15%;
 }
-
+input#view_posting {
+  width: 15%;
+  position: absolute;
+  right: 5;
+  bottom: 5;
+}
 form#sign_up_form {
   margin-top: 2%;
   text-align: center;
