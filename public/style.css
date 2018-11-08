@@ -75,6 +75,17 @@ body {
   text-indent: 9px;
   margin-bottom: 5px;
 }
+.listing_pages_title_text {
+  color: white;
+  text-shadow: -2px 2px #FF5660;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FF5660;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  margin-top: 10%;
+  font-size: 60px;
+  text-align: center;
+}
 .nav_button {
   height: 50px;
   font-size: 11px;
@@ -153,11 +164,6 @@ h1#topnav_title {
 h1#user_home_title {
   margin-top: 15%;
   font-size: 80px;
-  text-align: center;
-}
-h1#new_listing_title {
-  margin-top: 10%;
-  font-size: 60px;
   text-align: center;
 }
 h2#user_home_text {

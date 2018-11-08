@@ -1,5 +1,6 @@
 <%= erb :'partials/head' %>
 <%= erb :'partials/nav_bar' %>
+<h1 class='listing_pages_title_text'>Your submitted bookings</h1>
 <% @bookings.each_with_index do |booking, index| %>
 <h1><%= @postings[index].title %></h1>
 <h3><%= @postings[index].description %></h3>
