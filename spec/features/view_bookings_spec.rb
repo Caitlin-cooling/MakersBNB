@@ -8,6 +8,7 @@ feature 'viewing bookings' do
     expect(page).to have_content 'Description'
     expect(page).to have_content 'The price is: £100'
     expect(page).to have_content 'Stan Testson'
+    expect(page).to have_content '2018-11-08'
   end
 
   scenario 'user can receive a request then view the request on a page' do

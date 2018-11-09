@@ -35,4 +35,31 @@ describe Posting do
       expect(post.user_id).to eq '1'
     end
   end
+
+  describe ".retreive_unavailable_dates" do
+
+    before do
+      insert_users_into_test_database
+      insert_posting_into_test_database
+    end
+
+    it "retreive an unavailable date for a booking" do
+      pending_booking = Booking.create(posting_id: '1', owner_id: '1',
+                                       user_id: '2', booking_date: '2018-11-08')
+      pending_booking.update_status('Confirmed')
+      posting_id = Posting.find_by_id(pending_booking.posting_id)
+      expect(Posting.retreive_unavailable_dates(posting_id)).to eq ['2018-11-08']
+    end
+
+    it "retreive unavailable dates for a booking" do
+      pending_booking1 = Booking.create(posting_id: '1', owner_id: '1',
+                                       user_id: '2', booking_date: '2018-11-08')
+      pending_booking2 = Booking.create(posting_id: '1', owner_id: '1',
+                                        user_id: '2', booking_date: '2018-11-09')
+      pending_booking1.update_status('Confirmed')
+      pending_booking2.update_status('Confirmed')
+      posting_id = Posting.find_by_id(pending_booking1.posting_id)
+      expect(Posting.retreive_unavailable_dates(posting_id)).to eq ['2018-11-08', '2018-11-09' ]
+    end
+  end
 end

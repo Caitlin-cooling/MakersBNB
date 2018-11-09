@@ -1,6 +1,26 @@
+<!DOCTYPE html>
+<html>
 <%= erb :'partials/head' %>
-<%= erb :'partials/nav_bar' %>
-<h1 class='listing_pages_title_text'>Book this space</h1>
+<head>
+  <script src="/script/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="/script/dates.js"></script>
+</head>
+
+<body>
+  <%= erb :'partials/nav_bar' %>
+  <h1 class='listing_pages_title_text'>Book this space</h1>
+  <%= @unavailable_dates  %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#datepicker").flatpickr({
+        disable: ["2018-11-10"],
+        dateFormat: "Y-m-d",
+        defaultDate: ["2018-11-08"]
+      });
+    });
+  </script>
 <article class='jumbotron'>
   <h1><%= @post.title %></h1>
   <h3><%= @post.description %></h3>
@@ -12,6 +32,8 @@
     <input type="hidden" name="owner_id" value="<%= @owner.id %>" >
     <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
     <input type="hidden" name="posting_id" value="<%= @post.id %>" >
+    <label>Booking date:</label>
+    <input type="text" id="datepicker" name="booking_date" placeholder="Select date" value="2018-11-08">
     <input id='confirm_booking' class='custom_button' type="submit" value="Submit Booking" >
   </form>
 </article>
@@ -19,3 +41,4 @@
 <article id='confirm_booking_flash' class='flash_message'>
   <%= flash[:message]%>
 </article>
+</body>

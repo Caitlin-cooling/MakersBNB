@@ -44,4 +44,13 @@ class Posting
                 date: result[0]['date'], user_id: result[0]['user_id'],
                 date_from: result[0]['date_from'], date_to: result[0]['date_to'])
   end
+
+
+  def self.retreive_unavailable_dates(posting)
+    bookings = DatabaseConnection.query('SELECT * FROM bookings ' \
+      "WHERE posting_id = '#{posting.id}' AND status = 'Confirmed';")
+    bookings.map do |booking|
+      booking['booking_date']
+    end
+  end
 end
