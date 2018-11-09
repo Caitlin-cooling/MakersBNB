@@ -14,7 +14,7 @@ class User
   def self.create(name:, email:, password:)
     return if find_by_email(email)
     DatabaseConnection.query("INSERT INTO users(name,email,password) \
-    VALUES('#{name}', '#{email}', '#{BCrypt::Password.create(password)}') \
+    VALUES('#{name.gsub(/'/,'''')}', '#{email}', '#{BCrypt::Password.create(password)}') \
     RETURNING id, name, email, password;")
   end
 
