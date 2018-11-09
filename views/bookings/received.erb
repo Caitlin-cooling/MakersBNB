@@ -6,7 +6,7 @@
 <h1><%= @postings[index].title %></h1>
 <p>£<%= @postings[index].price %></p>
 <p><%= @bookers[index].name %><br><%= @bookers[index].email %></p>
-<p>Booking date: 2018-11-08</p>
+<p>Booking date: <%= booking.booking_date %></p>
 <p>Status: <%= booking.status %></p>
 <form action="/:id/bookings/received/<%= booking.id %>" method='post'>
   <input name="_method" type="hidden" value="PATCH">
