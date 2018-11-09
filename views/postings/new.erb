@@ -1,17 +1,38 @@
 <%= erb :'partials/head' %>
-<%= erb :'partials/nav_bar' %>
-<h1 class='listing_pages_title_text'>List a space</h1>
-<br><br>
-<form action="/postings/save_new" method="post">
-  <label class='new_listing_label'>Title</label>
-  <input class='new_listing_input' type='text' name='title' placeholder='Title'><br>
-  <label class='new_listing_label'>Description</label>
-  <input class='new_listing_input' type="text"  name='description' placeholder="Description"><br>
-  <label class='new_listing_label'>Price per night (£)</label>
-  <input class='new_listing_input' type="text" name='price'><br>
-  <label class='new_listing_label'>Date Available From:</label>
-  <input class='new_listing_input' type="date" name="date_from" value="2018-11-06"><br>
-  <label class='new_listing_label'>Date Available To:</label>
-  <input class='new_listing_input' type="date" name="date_to" value="2018-11-07"><br><br>
-  <input id='new_listing_submit' class='custom_button' type="submit" value="Submit">
-</form>
+<head>
+  <script src="/script/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+  <%= erb :'partials/nav_bar' %>
+  <h1 class='listing_pages_title_text'>List a space</h1>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#date_from").flatpickr({
+        dateFormat: "Y-m-d",
+        defaultDate: "today",
+        minDate: "today"
+      });
+      $("#date_to").flatpickr({
+        dateFormat: "Y-m-d",
+        defaultDate: "today",
+        minDate: "today"
+      });
+    });
+  </script>
+  <br><br>
+  <form action="/postings/save_new" method="post">
+    <label class='new_listing_label'>Title</label>
+    <input class='new_listing_input' type='text' name='title' placeholder='Title'><br>
+    <label class='new_listing_label'>Description</label>
+    <input class='new_listing_input' type="text"  name='description' placeholder="Description"><br>
+    <label class='new_listing_label'>Price per night (£)</label>
+    <input class='new_listing_input' type="text" name='price'><br>
+    <label class='new_listing_label'>Date Available From:</label>
+    <input class='new_listing_input' type="text" id="date_from" name="date_from" placeholder="Select date" value="2018-11-06"><br>
+    <label class='new_listing_label'>Date Available To:</label>
+    <input class='new_listing_input' type="text" id="date_to" name="date_to" placeholder="Select date" value="2018-11-07"><br><br>
+    <input id='new_listing_submit' class='custom_button' type="submit" value="Submit">
+  </form>
+</body>

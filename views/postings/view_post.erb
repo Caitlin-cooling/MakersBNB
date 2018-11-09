@@ -5,19 +5,19 @@
   <script src="/script/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="/script/dates.js"></script>
 </head>
 
 <body>
   <%= erb :'partials/nav_bar' %>
   <h1 class='listing_pages_title_text'>Book this space</h1>
-  <%= @unavailable_dates  %>
   <script type="text/javascript">
     $(document).ready(function() {
       $("#datepicker").flatpickr({
-        disable: ["2018-11-10"],
+        disable: <%= @unavailable_dates  %>,
         dateFormat: "Y-m-d",
-        defaultDate: ["2018-11-08"]
+        defaultDate: "today",
+        minDate: "<%= @post.date_from  %>",
+        maxDate: "<%= @post.date_to  %>"
       });
     });
   </script>
