@@ -21,24 +21,24 @@
       });
     });
   </script>
-<article class='jumbotron'>
-  <h1><%= @post.title %></h1>
-  <h3><%= @post.description %></h3>
-  <p>The price is: £<%= @post.price %></p>
-  <p>Available from: <%= @post.date_from %> </p>
-  <p>Available to: <%= @post.date_to %> </p>
-  <p><%= @owner.name %><br><%= @owner.email %></p>
-  <form action="/postings/<%= @post.id %>/book" method="post">
-    <input type="hidden" name="owner_id" value="<%= @owner.id %>" >
-    <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
-    <input type="hidden" name="posting_id" value="<%= @post.id %>" >
-    <label>Booking date:</label>
-    <input type="text" id="datepicker" name="booking_date" placeholder="Select date" value="2018-11-08">
-    <input id='confirm_booking' class='custom_button' type="submit" value="Submit Booking" >
-  </form>
-</article>
+  <article class='jumbotron'>
+    <h1><%= @post.title %></h1>
+    <h3><%= @post.description %></h3>
+    <p>The price is: £<%= @post.price %></p>
+    <p>Available from: <%= @post.date_from %> </p>
+    <p>Available to: <%= @post.date_to %> </p>
+    <p><%= @owner.name %><br><%= @owner.email %></p>
+    <form action="/postings/<%= @post.id %>/book" method="post">
+      <input type="hidden" name="owner_id" value="<%= @owner.id %>" >
+      <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
+      <input type="hidden" name="posting_id" value="<%= @post.id %>" >
+      <label>Booking date:</label>
+      <input type="text" id="datepicker" name="booking_date" placeholder="Select date" value="2018-11-08">
+      <input id='confirm_booking' class='custom_button' type="submit" value="Submit Booking" >
+    </form>
+  </article>
 
-<article id='confirm_booking_flash' class='flash_message'>
-  <%= flash[:message]%>
-</article>
+  <article id='confirm_booking_flash' class='flash_message'>
+    <%= flash[:message]%>
+  </article>
 </body>
