@@ -16,7 +16,9 @@
       $("#datepicker").flatpickr({
         disable: <%= @unavailable_dates  %>,
         dateFormat: "Y-m-d",
-        defaultDate: ["2018-11-08"]
+        defaultDate: ["2018-11-08"],
+        minDate: "<%= @post.date_from  %>",
+        maxDate: "<%= @post.date_to  %>"
       });
     });
   </script>
