@@ -1,48 +1,36 @@
 # MakersBNB!
+MakersBNB is an app that allows users to sign up and log in to an existing account.
 
-### User Stories
+![Alt text](/assets/New_home_page.png)
 
-#### For our minimum viable product
-```
-As a user,
-So I can visit MakersBNB,
-I would like to view the MakersBNB home page
-# Completed
+![Alt text](/assets/Welcome.png)
 
-As a user,
-So I can start using MakersBNB,
-I would like to sign up to MakersBNB
+Hosts can create listings for spaces that they would like to let out including a title, description, price and dates that it is available for.
 
-As a space renter,
-So I can stay in the space of my dreams,
-I would like to view a list of available spaces
+![Alt text](/assets/Create_posting.png)
 
-As a space owner,
-So I can rent my space,
-I would like to list a space on MakersBNB
+![Alt text](/assets/View_postings.png)
 
-As a space owner,
-So other users can contact me,
-I would like my contact details to be shown on my space listing
+A guest can then request a one night stay from any of the available dates and they will be able to see any of the bookings that they have requested in their Submitted bookings page.
 
-As a user,
-So I can continue using MakersBnB,
-I would like to log in and log out
-```
-#### After completing our MVP
-```
-As a space owner,
-So other users can contact me,
-I would like my email address and name to be shown on my space listing
+![Alt text](/assets/Request_booking.png)
 
-As a space owner,
-So that I can advertise my space,
-I can name my space, provide a short description of the space, and a price per night.
+![Alt text](/assets/Submitted_bookings.png)
 
-```
+![Alt text](/assets/Received_bookings.png)
 
-### How to set up the project environment
-1. `bundle install`
-2. `rake setup`
+By default, your booking will be pending, awaiting the hosts response. The host can see their received bookings in their received bookings page. Once they have either accepted or declined that booking both the guest and the host will see the updated status. If the booking is confirmed, the date will then no longer be available to book.
+
+![Alt text](/assets/Received_accepted.png)
+
+![Alt text](/assets/Submitted_accepted.png)
+
+### Using this app
+1. Clone the repo using `git clone https://github.com/jebax/MakersBNB.git`
+1. Run `bundle install`
+2. Run `rake setup`
 3. Use `rspec` to run tests.
 4. Use `rackup config.ru` to run application at `http://localhost:9292`.
+
+### Our Learning Diary
+Our learning diary with a full list of user stories, learnings and backlog can be found here `https://trello.com/b/5FWwCE8l/makersbnb`.
