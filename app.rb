@@ -90,6 +90,7 @@ class MakersBnB < Sinatra::Base
     post_id = params[:id]
     @post = Posting.find_by_id(post_id)
     @owner = User.find_by_id(@post.user_id)
+    @unavailable_dates = Posting.retreive_unavailable_dates(@post)
     erb :"postings/view_post"
   end
 

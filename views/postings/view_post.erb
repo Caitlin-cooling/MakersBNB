@@ -9,6 +9,16 @@
 </head>
 
 <body>
+  <%= @unavailable_dates  %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#datepicker").flatpickr({
+        disable: ["2018-11-10"],
+        dateFormat: "Y-m-d",
+        defaultDate: ["2018-11-08"]
+      });
+    });
+  </script>
   <h1><%= @post.title %></h1>
   <h3><%= @post.description %></h3>
   <p>The price is: £<%= @post.price %></p>
@@ -20,7 +30,7 @@
     <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
     <input type="hidden" name="posting_id" value="<%= @post.id %>" >
     <label>Booking date:</label>
-    <input type="text" id="datepicker" name="booking_date" placeholder="Select date">
+    <input type="text" id="datepicker" name="booking_date" placeholder="Select date" value="2018-11-08">
     <input type="submit" value="Submit Booking" >
   </form>
   <%= flash[:message]%>

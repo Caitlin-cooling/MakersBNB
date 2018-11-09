@@ -57,5 +57,7 @@ def request_booking_as_second_user
   log_in_as_second_user
   click_button 'View Listings'
   click_button 'Book'
+  # save_and_open_page
   click_button 'Submit Booking'
+  # save_and_open_page
 end
