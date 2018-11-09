@@ -8,6 +8,7 @@ require_relative 'bnb_helpers'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
+  enable :method_override
   register Sinatra::Flash
   helpers BnBHelpers
 
@@ -48,6 +49,14 @@ class MakersBnB < Sinatra::Base
     @postings = Booking.retrieve_postings(@bookings)
     @bookers = Booking.retrieve_bookers(@bookings)
     erb :"bookings/received"
+  end
+
+  patch '/:id/bookings/received/:booking_id' do
+    @booking_id = params[:booking_id]
+    @booking = Booking.find_by_id(@booking_id)
+    @booking.update_status('Confirmed') if params[:Confirmed]
+    @booking.update_status('Declined') if params[:Declined]
+    redirect '/:id/bookings/received'
   end
 
   get '/log_in' do

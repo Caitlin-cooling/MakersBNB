@@ -1,12 +1,243 @@
-form {
+body {
+  font-family: 'Roboto', sans-serif !important;
+}
+.background_image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
 
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+  display: block;
+  background-image: url("https://i.imgur.com/ozh4EGo.jpg");
+  height: 800px;
+  background-size: cover;
+
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+}
+.flash_message {
+  font-size: 11px;
+  text-transform: uppercase;;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: #D0464E;
+  text-align: center;
+}
+.index_content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-h1 {
-  font-family: helvetica;
-  font-size: 120px;
+
+.title_text {
+  color: white;
+  text-shadow: -2px 2px #FF5660;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FF5660;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+}
+
+.custom_button {
+  border-radius: 10px;
+  border-width: 3px;
+  color: white;
+  background-color: #FF5660;
+  height: 32px;
+  width: 5%;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.custom_button:hover {
+  background-color: #D0464E;
+}
+.form_control:focus {
+  outline: none;
+}
+.info_entry {
+  border-radius: 5px;
+  height: 32px;
+  border-width: 1px;
+  width: 18%;
+  font-size: 13px;
+  text-indent: 9px;
+  margin-bottom: 5px;
+}
+.jumbotron {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+}
+.listing_pages_title_text {
+  color: white;
+  text-shadow: -2px 2px #FF5660;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FF5660;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  margin-top: 10%;
+  margin-bottom: 2%;
+  font-size: 60px;
+  text-align: center;
+}
+.nav_button {
+  height: 50px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.nav_button:hover {
+  background-color: #FF5660;
+}
+.new_listing_label {
+  display: inline-block;
+  float: left;
+  width: 200px;
+  margin-top: 5px;
+  margin-left: 32%;
+  margin-bottom: 1%;
+  font-family: 'Poppins', sans-serif !important;
+}
+.new_listing_input {
+  display: inline-block;
+  float: left;
+  border-radius: 5px;
+  height: 32px;
+  border-width: 1px;
+  width: 20%;
+  font-size: 13px;
+  text-indent: 9px;
+  margin-bottom: 1%;
+}
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  float: left;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  z-index: 1;
+}
+.topnav form {
+  display: block;
+  float: left;
+}
+.topnav h1 {
+  display: block;
+  float: left;
+}
+article#index_flash {
+  margin-top: 2%;
+}
+article#log_in_flash {
+  margin-top: 2%;
+}
+h1#index_title {
+  margin-top: 10%;
+  font-size: 80px;
+  text-align: center;
+}
+h1#topnav_title {
+  font-size: 32px;
+  text-shadow: -1px 1px #FF5660;
+  margin-left: 20px;
+  margin-top: 6px;
+  margin-right: 20px;
+}
+h1#user_home_title {
+  margin-top: 15%;
+  font-size: 80px;
+  text-align: center;
+}
+h2#user_home_text {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2%;
+  color: #FF5660;
+}
+input#accept {
+  width: 40%;
+  position: absolute;
+  left: 9%;
+  bottom: 5;
+}
+input#decline {
+  width: 40%;
+  background-color: #D0464E;
+  position: absolute;
+  right: 9%;
+  bottom: 5;
+}
+input#decline:hover {
+  background-color: #913136;
+}
+input#log_in {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+input#nav_log_out {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 15%;
+}
+input#sign_up {
+  margin-left: 0.5%;
+  width: 18%;
+}
+input#confirm_login {
+  margin-left: 0.5%;
+  width: 18%;
+}
+input#confirm_booking {
+  width: 30%;
+  position: absolute;
+  right: 5;
+  bottom: 5;
+}
+input#new_listing_submit {
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 42.5%;
+  width: 15%;
+}
+input#view_posting {
+  width: 15%;
+  position: absolute;
+  right: 5;
+  bottom: 5;
+}
+form#sign_up_form {
+  margin-top: 2%;
+  text-align: center;
+}
+form#log_in_form {
+  margin-top: 2%;
   text-align: center;
 }
