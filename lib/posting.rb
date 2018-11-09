@@ -17,7 +17,7 @@ class Posting
   def self.create(title, description, price, user_id, date_from, date_to)
     result = DatabaseConnection.query('INSERT INTO postings(title, ' \
        'description, price, date, user_id, date_from, date_to) VALUES ' \
-       "('#{title}', '#{description}', '#{price}', '#{Time.now}', " \
+       "('#{title.gsub(/'/,'''')}', '#{description.gsub(/'/,'''')}', '#{price}', '#{Time.now}', " \
        "'#{user_id}', '#{date_from}', '#{date_to}') RETURNING *;")
     Posting.new(id: result[0]['id'], title: result[0]['title'],
                 description: result[0]['description'], price: result[0]['price'],
