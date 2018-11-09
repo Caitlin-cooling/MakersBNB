@@ -3,6 +3,8 @@
 <head>
   <script src="/script/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="/script/dates.js"></script>
 </head>
 
@@ -18,8 +20,7 @@
     <input type="hidden" name="user_id" value="<%= @current_user.id %>" >
     <input type="hidden" name="posting_id" value="<%= @post.id %>" >
     <label>Booking date:</label>
-    <!-- <input type="text" id="datepicker" name="booking_date"> -->
-    <input type="date" id="datepicker" name="booking_date" value="2018-11-08">
+    <input type="text" id="datepicker" name="booking_date" placeholder="Select date">
     <input type="submit" value="Submit Booking" >
   </form>
   <%= flash[:message]%>
