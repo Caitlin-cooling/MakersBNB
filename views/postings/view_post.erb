@@ -11,11 +11,10 @@
 <body>
   <%= erb :'partials/nav_bar' %>
   <h1 class='listing_pages_title_text'>Book this space</h1>
-  <%= @unavailable_dates  %>
   <script type="text/javascript">
     $(document).ready(function() {
       $("#datepicker").flatpickr({
-        disable: ["2018-11-10"],
+        disable: <%= @unavailable_dates  %>,
         dateFormat: "Y-m-d",
         defaultDate: ["2018-11-08"]
       });
