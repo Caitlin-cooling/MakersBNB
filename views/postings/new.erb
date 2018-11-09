@@ -11,11 +11,13 @@
     $(document).ready(function() {
       $("#date_from").flatpickr({
         dateFormat: "Y-m-d",
-        defaultDate: ["2018-11-08"]
+        defaultDate: "today",
+        minDate: "today"
       });
       $("#date_to").flatpickr({
         dateFormat: "Y-m-d",
-        defaultDate: ["2018-11-08"]
+        defaultDate: "today",
+        minDate: "today"
       });
     });
   </script>
