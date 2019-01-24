@@ -34,3 +34,6 @@ By default, your booking will be pending, awaiting the hosts response. The host 
 
 ### Our Learning Diary
 Our learning diary with a full list of user stories, learnings and backlog can be found here `https://trello.com/b/5FWwCE8l/makersbnb`.
+
+### Known Issues
+Currently you can't add apostrophes to postings
